@@ -1,1 +1,0 @@
-.router-view{position:absolute;width:100%;height:auto}.page-slide-enter-active,.page-slide-leave-active{transition:all 1s ease}.page-slide-enter{transform:translate(100%);opacity:0}.page-slide-enter-to,.page-slide-leave{transform:translate(0);opacity:1%}.page-slide-leave-to{transform:translate(-100%);opacity:0}

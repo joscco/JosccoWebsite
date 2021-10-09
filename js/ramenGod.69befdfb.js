@@ -1,2 +1,2 @@
 (window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["ramenGod"],{"3c96":function(t,n,i){},"433a":function(t,n,i){"use strict";i.r(n);var s=function(){var t=this,n=t.$createElement,i=t._self._c||n;return i("div",{staticClass:"view-wrapper"},[i("div",{staticClass:"section",attrs:{id:"ramen-god-section"}},[i("h2",[t._v("This site is currently being built.")]),i("div",{staticClass:"back-link"},[i("router-link",{attrs:{to:"/"}},[t._v("Go Back")])],1)])])},e=[],a={name:"RamenGod"},c=a,r=(i("f93d"),i("2877")),o=Object(r["a"])(c,s,e,!1,null,null,null);n["default"]=o.exports},f93d:function(t,n,i){"use strict";i("3c96")}}]);
-//# sourceMappingURL=ramenGod.c22b06df.js.map
+//# sourceMappingURL=ramenGod.69befdfb.js.map
