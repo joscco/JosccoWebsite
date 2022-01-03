@@ -36,11 +36,10 @@ $arrow-height: 80px;
   
   .project-item-image {
     height: 75%;
-    width: 110%;
+    width: 100%;
     display: flex;
     object-fit: cover;
     object-position: top;
-    transition: all 10s;
   }
   
   .project-text {
@@ -64,15 +63,14 @@ $arrow-height: 80px;
   }
 }
 
-.project-item.active {
-  img {
-    transform: translateX(-5%);
-  }
-}
-
 .project-item-link::before {
   z-index: 2;
-  content: '';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  content: 'Take me there!';
+  color: #000;
   position: absolute;
   left: 0;
   top: 0;
