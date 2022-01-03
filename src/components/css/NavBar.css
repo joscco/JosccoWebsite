@@ -1,0 +1,18 @@
+#top-navbar {
+  z-index: 10;
+  flex-wrap: nowrap;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 140px;
+}
+#top-navbar .sub-section {
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+}
+
+/*# sourceMappingURL=NavBar.css.map */

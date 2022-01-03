@@ -1,0 +1,14 @@
+svg {
+  height: 80px;
+  transition: all 0.4s ease-in-out;
+}
+
+.backblack {
+  transition: all 0.4s ease-in-out;
+}
+
+svg:hover .backblack {
+  fill: #CD6F00;
+}
+
+/*# sourceMappingURL=Logo.css.map */

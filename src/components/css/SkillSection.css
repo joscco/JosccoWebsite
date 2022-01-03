@@ -1,0 +1,10 @@
+.skills {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+/*# sourceMappingURL=SkillSection.css.map */
