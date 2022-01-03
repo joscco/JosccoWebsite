@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.2f9f8ddd.chunk.css",
+    "main.css": "/static/css/main.abd89837.chunk.css",
     "main.js": "/static/js/main.f55e7f76.chunk.js",
     "main.js.map": "/static/js/main.f55e7f76.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.da5eca5d.js",
@@ -10,7 +10,7 @@
     "static/js/3.614b4858.chunk.js": "/static/js/3.614b4858.chunk.js",
     "static/js/3.614b4858.chunk.js.map": "/static/js/3.614b4858.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.2f9f8ddd.chunk.css.map": "/static/css/main.2f9f8ddd.chunk.css.map",
+    "static/css/main.abd89837.chunk.css.map": "/static/css/main.abd89837.chunk.css.map",
     "static/js/2.fca5765b.chunk.js.LICENSE.txt": "/static/js/2.fca5765b.chunk.js.LICENSE.txt",
     "static/media/adventsKalender2021.831f4b9e.png": "/static/media/adventsKalender2021.831f4b9e.png",
     "static/media/brackets_min.25c3180d.png": "/static/media/brackets_min.25c3180d.png",
@@ -32,7 +32,7 @@
   "entrypoints": [
     "static/js/runtime-main.da5eca5d.js",
     "static/js/2.fca5765b.chunk.js",
-    "static/css/main.2f9f8ddd.chunk.css",
+    "static/css/main.abd89837.chunk.css",
     "static/js/main.f55e7f76.chunk.js"
   ]
 }
