@@ -1,0 +1,45 @@
+.nav-bar-item {
+  background-color: rgba(255, 195, 0, 0.6);
+  font-size: 1.7rem;
+  font-weight: 300;
+  flex: 1 1 0;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  transition: all 0.4s ease-in-out;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+  transition: all 0.4s ease-in-out;
+}
+
+a:hover {
+  color: #CD6F00;
+  text-decoration: none;
+}
+
+.nav-bar-item.active {
+  background-color: #000;
+  color: #FFF;
+}
+
+.nav-bar-item.active:hover {
+  background-color: #CD6F00;
+}
+
+@media screen and (max-width: 1024px) {
+  .nav-bar-item {
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .nav-bar-item {
+    background-color: #FFF;
+    font-size: 2rem;
+  }
+}

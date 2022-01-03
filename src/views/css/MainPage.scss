@@ -1,0 +1,179 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  backface-visibility: hidden;
+
+}
+
+a, div {
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  text-align: center;
+  font-family: Poppins, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Large: 1024+
+.section {
+  min-height: 100vh;
+  padding-top: 140px;
+  padding-bottom: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+// Rows in Section
+.sub-section {
+  width: 980px;
+  flex: 1 1 0;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.reverse-section {
+  flex-direction: row-reverse;
+}
+
+// Columns in Section
+.container-box {
+  // Equal widths for all containers!
+  width: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.justify-top-container {
+  justify-content: flex-start;
+}
+
+.section-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  padding: 20px;
+  margin: 5px 0;
+  width: 400px;
+}
+
+.section-sub-heading {
+  font-size: 2rem;
+  font-weight: 500;
+  padding: 20px;
+}
+
+.section-text {
+  text-align: left;
+  font-size: 1.5rem;
+  padding: 15px 15px 20px;
+  font-weight: 300;
+}
+
+
+// Laptop: 769 min - 1024 max
+// Make container smaller
+@media all and (max-width: 1024px) {
+  .sub-section {
+    width: 700px;
+  }
+
+  .section-heading {
+    font-size: 2.2rem;
+    width: 350px;
+  }
+
+  .section-sub-heading {
+    font-size: 1.7rem;
+  }
+
+  .section-text {
+    font-size: 1.3rem;
+  }
+}
+
+// Tablet: 481 min - 768 max
+// Go to column mode
+@media all and (max-width: 768px) {
+  .sub-section {
+    flex-direction: column;
+    width: 450px;
+  }
+
+  .section-heading {
+    font-size: 1.9rem;
+    width: 300px;
+  }
+
+  .section-sub-heading {
+    font-size: 1.6rem;
+  }
+
+  .section-text {
+    font-size: 1.2rem;
+  }
+}
+
+// Mobile: 320 min - 480 max
+// Make container even smaller
+@media all and (max-width: 480px) {
+  .sub-section {
+    width: 320px;
+  }
+
+  .section-heading {
+    font-size: 1.5rem;
+    width: 250px;
+  }
+
+  .section-sub-heading {
+    font-size: 1.2rem;
+  }
+
+  .section-text {
+    font-size: 1rem;
+  }
+}
+
+// IPad Pro
+@media only screen
+and (min-width: 1024px)
+and (max-height: 1366px)
+and (-webkit-min-device-pixel-ratio: 1.5) {
+  .section{
+    min-height: 50vh;
+  }
+}
+
+.betweener {
+  background-color: #FFC300;
+  width: 100%;
+  height: 40px;
+}
+.betweener-in {
+  margin-top: -5px;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 20%);
+}
+
+.betweener-out {
+  margin-bottom: -5px;
+  clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 80%);
+}
+
+
+
