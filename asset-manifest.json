@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.abd89837.chunk.css",
-    "main.js": "/static/js/main.7eb1bf59.chunk.js",
-    "main.js.map": "/static/js/main.7eb1bf59.chunk.js.map",
+    "main.css": "/static/css/main.70bc10a2.chunk.css",
+    "main.js": "/static/js/main.af3c36f9.chunk.js",
+    "main.js.map": "/static/js/main.af3c36f9.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.da5eca5d.js",
     "runtime-main.js.map": "/static/js/runtime-main.da5eca5d.js.map",
     "static/js/2.fca5765b.chunk.js": "/static/js/2.fca5765b.chunk.js",
@@ -10,11 +10,11 @@
     "static/js/3.614b4858.chunk.js": "/static/js/3.614b4858.chunk.js",
     "static/js/3.614b4858.chunk.js.map": "/static/js/3.614b4858.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.abd89837.chunk.css.map": "/static/css/main.abd89837.chunk.css.map",
+    "static/css/main.70bc10a2.chunk.css.map": "/static/css/main.70bc10a2.chunk.css.map",
     "static/js/2.fca5765b.chunk.js.LICENSE.txt": "/static/js/2.fca5765b.chunk.js.LICENSE.txt",
     "static/media/adventsKalender2021.831f4b9e.png": "/static/media/adventsKalender2021.831f4b9e.png",
-    "static/media/arrow_left.428ce737.svg": "/static/media/arrow_left.428ce737.svg",
-    "static/media/arrow_right.f16aad88.svg": "/static/media/arrow_right.f16aad88.svg",
+    "static/media/arrow_left.bdcdf0f6.svg": "/static/media/arrow_left.bdcdf0f6.svg",
+    "static/media/arrow_right.be11abb3.svg": "/static/media/arrow_right.be11abb3.svg",
     "static/media/brackets_min.25c3180d.png": "/static/media/brackets_min.25c3180d.png",
     "static/media/eulers_totient_plot.4a085235.png": "/static/media/eulers_totient_plot.4a085235.png",
     "static/media/hand.4a47b218.png": "/static/media/hand.4a47b218.png",
@@ -34,7 +34,7 @@
   "entrypoints": [
     "static/js/runtime-main.da5eca5d.js",
     "static/js/2.fca5765b.chunk.js",
-    "static/css/main.abd89837.chunk.css",
-    "static/js/main.7eb1bf59.chunk.js"
+    "static/css/main.70bc10a2.chunk.css",
+    "static/js/main.af3c36f9.chunk.js"
   ]
 }
