@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.abd89837.chunk.css",
-    "main.js": "/static/js/main.f55e7f76.chunk.js",
-    "main.js.map": "/static/js/main.f55e7f76.chunk.js.map",
+    "main.js": "/static/js/main.7eb1bf59.chunk.js",
+    "main.js.map": "/static/js/main.7eb1bf59.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.da5eca5d.js",
     "runtime-main.js.map": "/static/js/runtime-main.da5eca5d.js.map",
     "static/js/2.fca5765b.chunk.js": "/static/js/2.fca5765b.chunk.js",
@@ -13,6 +13,8 @@
     "static/css/main.abd89837.chunk.css.map": "/static/css/main.abd89837.chunk.css.map",
     "static/js/2.fca5765b.chunk.js.LICENSE.txt": "/static/js/2.fca5765b.chunk.js.LICENSE.txt",
     "static/media/adventsKalender2021.831f4b9e.png": "/static/media/adventsKalender2021.831f4b9e.png",
+    "static/media/arrow_left.428ce737.svg": "/static/media/arrow_left.428ce737.svg",
+    "static/media/arrow_right.f16aad88.svg": "/static/media/arrow_right.f16aad88.svg",
     "static/media/brackets_min.25c3180d.png": "/static/media/brackets_min.25c3180d.png",
     "static/media/eulers_totient_plot.4a085235.png": "/static/media/eulers_totient_plot.4a085235.png",
     "static/media/hand.4a47b218.png": "/static/media/hand.4a47b218.png",
@@ -23,7 +25,7 @@
     "static/media/me.e7648915.png": "/static/media/me.e7648915.png",
     "static/media/mertens_min.e4dda4c2.png": "/static/media/mertens_min.e4dda4c2.png",
     "static/media/notebook.3e62d14a.png": "/static/media/notebook.3e62d14a.png",
-    "static/media/poisson_points.5940c71f.png": "/static/media/poisson_points.5940c71f.png",
+    "static/media/poisson_points.5f9367af.png": "/static/media/poisson_points.5f9367af.png",
     "static/media/ramengod.9e7166c6.png": "/static/media/ramengod.9e7166c6.png",
     "static/media/wildNight.bfd5fca1.png": "/static/media/wildNight.bfd5fca1.png",
     "static/media/window_min.8cc41eda.png": "/static/media/window_min.8cc41eda.png",
@@ -33,6 +35,6 @@
     "static/js/runtime-main.da5eca5d.js",
     "static/js/2.fca5765b.chunk.js",
     "static/css/main.abd89837.chunk.css",
-    "static/js/main.f55e7f76.chunk.js"
+    "static/js/main.7eb1bf59.chunk.js"
   ]
 }
