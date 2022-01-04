@@ -1,8 +1,8 @@
 import React from "react";
 import "./css/ProjectCarousel.css"
 import adventsKalender2021 from "./images/adventsKalender2021.png"
-import arrowLeft from "./images/arrow_left.png"
-import arrowRight from "./images/arrow_right.png"
+import arrowLeft from "./images/arrow_left.svg"
+import arrowRight from "./images/arrow_right.svg"
 import wildNight from "./images/wildNight.png";
 import jamesBot from "./images/jamesBot.png";
 import ramenGod from "./images/ramengod.png";
@@ -10,28 +10,8 @@ import masterThesis from "./images/eulers_totient_plot.png";
 import bachelorThesis from "./images/poisson_points.png";
 import zuckerWatte from "./images/zuckerwatte.png";
 
-export class ProjectCarousel extends React.Component<{}, { minIndex: number }> {
+export class ProjectCarousel extends React.Component {
     projectCarousel = React.createRef() as React.MutableRefObject<HTMLInputElement>;
-
-    constructor(props: any) {
-        super(props);
-        this.state = {minIndex: 0};
-
-        this.increaseMinIndex = this.increaseMinIndex.bind(this);
-        this.decreaseMinIndex = this.decreaseMinIndex.bind(this);
-    }
-
-    increaseMinIndex() {
-        if (this.state.minIndex < PROJECTS.length) {
-            this.setState({minIndex: this.state.minIndex + 1});
-        }
-    }
-
-    decreaseMinIndex() {
-        if (this.state.minIndex > 0) {
-            this.setState({minIndex: this.state.minIndex - 1});
-        }
-    }
 
     createItem(item: ProjectItemType, index: number) {
         return <div key={index} className={"carousel-item project-item" + ((index === 0) ? " active" : "")}>
