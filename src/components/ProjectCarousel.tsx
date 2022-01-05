@@ -9,15 +9,23 @@ import ramenGod from "./images/ramengod.png";
 import masterThesis from "./images/eulers_totient_plot.png";
 import bachelorThesis from "./images/poisson_points.png";
 import zuckerWatte from "./images/zuckerwatte.png";
+import {Link} from "react-router-dom";
 
 export class ProjectCarousel extends React.Component {
     projectCarousel = React.createRef() as React.MutableRefObject<HTMLInputElement>;
 
     createItem(item: ProjectItemType, index: number) {
+
+        let itemLink = <a href={item.link} className="project-item-link">
+            <img src={item.imagePath} className="project-item-image" alt={item.imageAlt}/>
+        </a>;
+
+        if (item.hasSubPage) {
+            itemLink = <Link to={item.link}>{itemLink}</Link>;
+        }
+
         return <div key={index} className={"carousel-item project-item" + ((index === 0) ? " active" : "")}>
-            <a href={item.link} className="project-item-link">
-                <img src={item.imagePath} className="project-item-image" alt={item.imageAlt}/>
-            </a>
+            {itemLink}
             <div className="project-text">
                 <div className="project-item-heading">{item.heading}</div>
                 <div className="project-item-description">{item.description}</div>
@@ -28,7 +36,8 @@ export class ProjectCarousel extends React.Component {
     render() {
         let items = PROJECTS.map((item, index) => this.createItem(item, index));
         let indicators = this.createIndicators(PROJECTS.length);
-        return <div ref={this.projectCarousel} id="projects-carousel" className="container-box carousel slide" data-ride="carousel">
+        return <div ref={this.projectCarousel} id="projects-carousel" className="container-box carousel slide"
+                    data-ride="carousel">
             {indicators}
             <div className="carousel-inner">
                 {items}
@@ -43,7 +52,9 @@ export class ProjectCarousel extends React.Component {
     }
 
     createIndicators(length: number) {
-        let items = Array.from(Array(length).keys()).map(number => <li data-target="#carouselExampleIndicators" data-slide-to={number} key={number} className={number === 0 ? "active": ""}></li>);
+        let items = Array.from(Array(length).keys()).map(number => <li data-target="#carouselExampleIndicators"
+                                                                       data-slide-to={number} key={number}
+                                                                       className={number === 0 ? "active" : ""}></li>);
         return <ol data-target="#projects-carousel" className="carousel-indicators">
             {items}
         </ol>

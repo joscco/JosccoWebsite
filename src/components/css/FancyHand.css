@@ -3,6 +3,8 @@
   position: relative;
   overflow: hidden;
   z-index: 1;
+  opacity: 0;
+  transition: all 1s ease;
 }
 .fancy-hand * {
   position: absolute;
@@ -17,6 +19,10 @@
 .fancy-hand .hand-image {
   height: 90%;
   z-index: 1;
+}
+
+.visible {
+  opacity: 1;
 }
 
 /*# sourceMappingURL=FancyHand.css.map */

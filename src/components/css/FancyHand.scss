@@ -3,6 +3,8 @@
   position: relative;
   overflow: hidden;
   z-index: 1;
+  opacity: 0;
+  transition: all 1s ease;
 
   * {
     position: absolute;
@@ -20,4 +22,8 @@
     height: 90%;
     z-index: 1;
   }
+}
+
+.visible {
+  opacity: 1;
 }

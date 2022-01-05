@@ -1,17 +1,20 @@
 import React from 'react';
-import {NavBar} from "../components/NavBar";
 import {Footer} from "../components/Footer";
 import "./css/ViewWrapper.css"
-import {BetweenerIn, BetweenerOut} from "../components/Betweener";
-import {MainView} from "../components/MainView";
+import {BrowserRouter as Router, Route, Routes, useLocation} from "react-router-dom";
+import {MainView} from "./MainView";
+import {RamenGodView} from "./RamenGodView";
+import {CSSTransition, TransitionGroup} from "react-transition-group";
 
-export class ViewWrapper extends React.Component {
-    render() {
-        return <div>
-            <NavBar/>
-            <MainView/>
-            <BetweenerOut/>
+export function ViewWrapper() {
+    return <div>
+        <Router>
+            <Routes>
+                <Route path="/ramen-god" element={<RamenGodView/>}/>
+                <Route path="/" element={<MainView/>}/>
+            </Routes>
             <Footer/>
-        </div>;
-    }
+        </Router>
+
+    </div>
 }

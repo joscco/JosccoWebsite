@@ -7,13 +7,14 @@ import brackets_icon from "./images/brackets_min.png";
 import mertens_icon from "./images/mertens_min.png";
 import "./css/FancyHand.css"
 
-export class FancyHand extends Component<{}, { width: number, seconds: number}> {
+export class FancyHand extends Component<{}, { width: number, seconds: number, imagesFadedIn:boolean}> {
     private readonly handRef: React.RefObject<HTMLInputElement>;
     private timer: any;
+    private fadeIn: any;
 
     constructor(props: any) {
         super(props);
-        this.state = {width: 0, seconds: 0};
+        this.state = {width: 0, seconds: 0, imagesFadedIn:false};
         this.handRef = React.createRef();
         this.mapItemToImage = this.mapItemToImage.bind(this);
     }
@@ -38,6 +39,9 @@ export class FancyHand extends Component<{}, { width: number, seconds: number}> 
     componentDidMount() {
         this.squarifyHandImage();
         window.addEventListener("resize", this.squarifyHandImage);
+        this.fadeIn = setTimeout(() => {
+            this.setState({imagesFadedIn: true})}, 400
+        );
         this.timer = setInterval(() => {
             this.setState({seconds: new Date().getTime() / 1000})
         }, 100);
@@ -51,7 +55,7 @@ export class FancyHand extends Component<{}, { width: number, seconds: number}> 
     render() {
         let seconds = this.state.seconds;
         let icons = minImages.map((item, index) => this.mapItemToImage(item, index, seconds));
-        return <div ref={this.handRef} className="fancy-hand" style={{height: this.state.width + 'px'}}>
+        return <div ref={this.handRef} className={"fancy-hand" +(this.state.imagesFadedIn ? " visible" : "")} style={{height: this.state.width + 'px'}}>
             {icons}
             <img className="hand-image" src={handImage} alt="Hand"/>
         </div>;
