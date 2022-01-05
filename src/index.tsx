@@ -2,11 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import {MainPage} from "./views/MainPage";
+import {ViewWrapper} from "./views/ViewWrapper";
 
 ReactDOM.render(
   <React.StrictMode>
-    <MainPage />
+    <ViewWrapper />
   </React.StrictMode>,
   document.getElementById('root')
 );
