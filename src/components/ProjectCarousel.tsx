@@ -9,15 +9,20 @@ import ramenGod from "./images/ramengod.png";
 import masterThesis from "./images/eulers_totient_plot.png";
 import bachelorThesis from "./images/poisson_points.png";
 import zuckerWatte from "./images/zuckerwatte.png";
+import {Link} from "react-router-dom";
 
 export class ProjectCarousel extends React.Component {
     projectCarousel = React.createRef() as React.MutableRefObject<HTMLInputElement>;
 
     createItem(item: ProjectItemType, index: number) {
 
-        let itemLink = <a href={item.link} className="project-item-link">
-            <img src={item.imagePath} className="project-item-image" alt={item.imageAlt}/>
-        </a>;
+        let itemLink = item.hasSubPage
+            ? <Link to={item.link} className="project-item-link">
+                <img src={item.imagePath} className="project-item-image" alt={item.imageAlt}/>
+            </Link>
+            : <a href={item.link} className="project-item-link">
+                <img src={item.imagePath} className="project-item-image" alt={item.imageAlt}/>
+            </a>;
 
         return <div key={index} className={"carousel-item project-item" + ((index === 0) ? " active" : "")}>
             {itemLink}
@@ -49,7 +54,7 @@ export class ProjectCarousel extends React.Component {
     createIndicators(length: number) {
         let items = Array.from(Array(length).keys()).map(number => <li data-target="#carouselExampleIndicators"
                                                                        data-slide-to={number} key={number}
-                                                                       className={number === 0 ? "active" : ""} />);
+                                                                       className={number === 0 ? "active" : ""}/>);
         return <ol data-target="#projects-carousel" className="carousel-indicators">
             {items}
         </ol>

@@ -15,7 +15,7 @@ export class SectionRamenGod extends React.Component {
         return <div className={"carousel-item" + (item.active ? " active" : "")} key={index}>
             <div className="sub-section">
                 <div className="container-box">
-                    <img className="w-100" src={item.imageSrc} alt={item.alt}/>
+                    <img style={{maxHeight: "75vh"}} src={item.imageSrc} alt={item.alt}/>
                 </div>
                 <div className="container-box">
                     <div className="section-heading">{item.heading}</div>

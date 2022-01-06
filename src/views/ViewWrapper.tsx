@@ -14,6 +14,5 @@ export function ViewWrapper() {
             </Routes>
             <Footer/>
         </Router>
-
     </div>
 }
