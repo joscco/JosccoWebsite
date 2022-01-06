@@ -3,8 +3,6 @@
   position: relative;
   overflow: hidden;
   z-index: 1;
-  opacity: 0;
-  transition: all 1s ease;
 
   * {
     position: absolute;
@@ -16,6 +14,11 @@
 
   .min-image {
     max-height: 20%;
+    opacity: 0;
+  }
+
+  .visible {
+    opacity: 1;
   }
 
   .hand-image {

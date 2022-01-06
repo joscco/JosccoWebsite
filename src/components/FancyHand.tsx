@@ -7,21 +7,22 @@ import brackets_icon from "./images/brackets_min.png";
 import mertens_icon from "./images/mertens_min.png";
 import "./css/FancyHand.css"
 
-export class FancyHand extends Component<{}, { width: number, seconds: number, imagesFadedIn:boolean}> {
+export class FancyHand extends Component<{}, { width: number, seconds: number, imagesFadedIn: boolean }> {
     private readonly handRef: React.RefObject<HTMLInputElement>;
     private timer: any;
     private fadeIn: any;
 
     constructor(props: any) {
         super(props);
-        this.state = {width: 0, seconds: 0, imagesFadedIn:false};
+        this.state = {width: 0, seconds: 0, imagesFadedIn: false};
         this.handRef = React.createRef();
         this.mapItemToImage = this.mapItemToImage.bind(this);
     }
 
     mapItemToImage(item: { src: any, alt: string }, index: number, seconds: number) {
         let itemStyle = this.getMinItemPosition(index, seconds);
-        return <img className="min-image" src={item.src} alt={item.alt} style={itemStyle} key={index}/>
+        return <img className={"min-image" + (this.state.imagesFadedIn ? " visible" : "")} src={item.src} alt={item.alt}
+                    style={itemStyle} key={index}/>
     }
 
     getMinItemPosition(index: number, seconds: number): { left: string, top: string, zIndex: number } {
@@ -40,7 +41,8 @@ export class FancyHand extends Component<{}, { width: number, seconds: number, i
         this.squarifyHandImage();
         window.addEventListener("resize", this.squarifyHandImage);
         this.fadeIn = setTimeout(() => {
-            this.setState({imagesFadedIn: true})}, 400
+                this.setState({imagesFadedIn: true})
+            }, 400
         );
         this.timer = setInterval(() => {
             this.setState({seconds: new Date().getTime() / 1000})
@@ -49,13 +51,13 @@ export class FancyHand extends Component<{}, { width: number, seconds: number, i
 
     componentWillUnmount() {
         window.removeEventListener("resize", this.squarifyHandImage)
-            clearInterval(this.timer)  ;
+        clearInterval(this.timer);
     }
 
     render() {
         let seconds = this.state.seconds;
         let icons = minImages.map((item, index) => this.mapItemToImage(item, index, seconds));
-        return <div ref={this.handRef} className={"fancy-hand" +(this.state.imagesFadedIn ? " visible" : "")} style={{height: this.state.width + 'px'}}>
+        return <div ref={this.handRef} className="fancy-hand" style={{height: this.state.width + 'px'}}>
             {icons}
             <img className="hand-image" src={handImage} alt="Hand"/>
         </div>;

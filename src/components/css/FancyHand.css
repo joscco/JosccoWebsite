@@ -3,8 +3,6 @@
   position: relative;
   overflow: hidden;
   z-index: 1;
-  opacity: 0;
-  transition: all 1s ease;
 }
 .fancy-hand * {
   position: absolute;
@@ -15,6 +13,10 @@
 }
 .fancy-hand .min-image {
   max-height: 20%;
+  opacity: 0;
+}
+.fancy-hand .visible {
+  opacity: 1;
 }
 .fancy-hand .hand-image {
   height: 90%;
