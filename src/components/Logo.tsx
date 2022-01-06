@@ -17,7 +17,7 @@ export class Logo extends React.Component<{ toggleMenuActive: any, menuActive: b
 
     render() {
         return <div className="logo">
-            <a href="#start" onClick={this.toggleMenuActive}>
+            <a href={"/#start"} onClick={this.toggleMenuActive}>
                 <LogoSVG/>
             </a>
         </div>
