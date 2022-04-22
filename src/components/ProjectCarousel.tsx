@@ -1,5 +1,6 @@
 import React from "react";
 import "./css/ProjectCarousel.css"
+import ludumDare50 from "./images/ludumDare50.png"
 import adventsKalender2021 from "./images/adventsKalender2021.png"
 import arrowLeft from "./images/arrow_left.svg"
 import arrowRight from "./images/arrow_right.svg"
@@ -71,6 +72,13 @@ type ProjectItemType = {
 }
 
 const PROJECTS: ProjectItemType[] = [{
+    hasSubPage: false,
+    link: "https://joscco.itch.io/dating-under-the-comet",
+    imagePath: ludumDare50,
+    imageAlt: "Dating under the Comet",
+    heading: "Dating under the Comet",
+    description: "A Game for the Ludum Dare 50 Game Jam"
+}, {
     hasSubPage: false,
     link: "https://joscco.github.io/Adventskalender2021",
     imagePath: adventsKalender2021,
