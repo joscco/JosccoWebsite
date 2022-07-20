@@ -1,5 +1,6 @@
 import React from "react";
 import "./css/ProjectCarousel.css"
+import dicity from "./images/dicity.png"
 import ludumDare50 from "./images/ludumDare50.png"
 import adventsKalender2021 from "./images/adventsKalender2021.png"
 import arrowLeft from "./images/arrow_left.svg"
@@ -72,6 +73,13 @@ type ProjectItemType = {
 }
 
 const PROJECTS: ProjectItemType[] = [{
+    hasSubPage: false,
+    link: "https://joscco.itch.io/dicity",
+    imagePath: dicity,
+    imageAlt: "Dicity",
+    heading: "Dicity",
+    description: "A Game for the GMTK 2022 Game Jam"
+},{
     hasSubPage: false,
     link: "https://joscco.itch.io/dating-under-the-comet",
     imagePath: ludumDare50,
