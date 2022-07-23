@@ -1,22 +1,24 @@
+@import "Global";
+
 .hamburger-menu {
   display: none;
   justify-content: left;
   align-items: center;
   flex-direction: column;
   width: 60px;
-  height: 60px;
+  height: 80px;
   margin-left: auto;
-  align-self: center;
   transition: all 0.4s ease-in-out;
   cursor: pointer;
 }
 
 .patty {
-  height: 15%;
+  height: 10px;
   width: 100%;
   margin: auto 0;
-  border-radius: 5px;
-  background-color: #000;
+  outline: 5px solid $dark;
+  border-radius: 3px;
+  background-color: $beige;
   transition: all 0.4s ease-in-out;
 }
 
@@ -28,11 +30,11 @@
   .hamburger-menu.active {
 
     .patty-one {
-      transform: translateY(10px) rotate(45deg);
+      transform: translateY(13px) rotate(45deg);
     }
 
     .patty-two {
-      transform: translateY(-10px) rotate(-45deg);
+      transform: translateY(-13px) rotate(-45deg);
     }
 
     .patty-three {

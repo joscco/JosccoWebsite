@@ -1,0 +1,15 @@
+@import "Global";
+
+.skills {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.section-heading {
+  color: $beige;
+  background-color: $dark;
+}

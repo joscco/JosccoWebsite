@@ -1,15 +1,44 @@
-#start {
-  background-color: #FFC300;
+.yellow {
+  background-color: #ffcd8d;
+}
+
+.dark {
+  background-color: #00313c;
+}
+
+.beige {
+  background-color: #f1f4d8;
+}
+
+.red {
+  background-color: #ff6572;
+}
+
+.yellow-font {
+  color: #ffcd8d;
+}
+
+.dark-font {
+  color: #00313c;
+}
+
+.beige-font {
+  color: #f1f4d8;
+}
+
+.red-font {
+  color: #ff6572;
 }
 
 .start-text {
+  align-self: flex-end;
   text-align: left;
-  color: #CD6F00;
 }
 
 .start-heading {
-  background-color: #FFFFFF;
-  clip-path: polygon(3% 5%, 97% 0, 100% 95%, 0% 100%);
+  border-style: dashed;
+  border-width: 5px;
+  border-color: #ff6572;
 }
 
 /*# sourceMappingURL=SectionStart.css.map */

@@ -5,19 +5,22 @@ import {SectionAbout} from "../components/SectionAbout";
 import {SectionProjects} from "../components/SectionProjects";
 import {SectionContact} from "../components/SectionContact";
 import {NavBar} from "../components/NavBar";
+import {SectionWorkExperience} from "../components/SectionSkills";
 
 export class MainView extends React.Component {
     render() {
         return <div>
             <NavBar/>
             <SectionStart/>
-            <BetweenerIn/>
+            <BetweenerIn color1="dark" color2="beige"/>
             <SectionAbout/>
-            <BetweenerOut/>
+            <BetweenerOut color1="beige" color2="red"/>
+            <SectionWorkExperience/>
+            <BetweenerIn color1="red" color2="beige"/>
             <SectionProjects/>
-            <BetweenerIn/>
+            <BetweenerOut color1="beige" color2="dark"/>
             <SectionContact/>
-            <BetweenerOut/>
+            <BetweenerIn color1="dark" color2="beige"/>
         </div>;
     }
 }

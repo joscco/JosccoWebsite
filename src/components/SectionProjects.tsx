@@ -1,6 +1,5 @@
 import React from "react";
 import {ProjectCarousel} from "./ProjectCarousel";
-import "./css/SectionProjects.css"
 
 export class SectionProjects extends React.Component {
     constructor(props: any) {
@@ -9,7 +8,7 @@ export class SectionProjects extends React.Component {
     }
 
     render() {
-        return <div id="projects" className="section">
+        return <div id="projects" className="section beige">
             <div className="project-carousel-section">
                 <ProjectCarousel/>
             </div>

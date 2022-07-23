@@ -1,7 +1,6 @@
 import React from 'react';
-import {ReactComponent as LogoSVG} from './images/logo.svg'
+import {ReactComponent as LogoSVG} from '../images/logo.svg'
 import "./css/Logo.css"
-import {Link} from "react-router-dom";
 
 export class Logo extends React.Component<{ toggleMenuActive: any, menuActive: boolean }> {
 
@@ -18,9 +17,9 @@ export class Logo extends React.Component<{ toggleMenuActive: any, menuActive: b
 
     render() {
         return <div className="logo">
-            <Link to={"/#start"} onClick={this.toggleMenuActive}>
+            <a href={"/#start"} onClick={this.toggleMenuActive}>
                 <LogoSVG/>
-            </Link>
+            </a>
         </div>
     }
 }

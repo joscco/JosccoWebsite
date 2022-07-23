@@ -1,5 +1,33 @@
-#contact {
-  background-color: #FFFFFF;
+.yellow {
+  background-color: #ffcd8d;
+}
+
+.dark {
+  background-color: #00313c;
+}
+
+.beige {
+  background-color: #f1f4d8;
+}
+
+.red {
+  background-color: #ff6572;
+}
+
+.yellow-font {
+  color: #ffcd8d;
+}
+
+.dark-font {
+  color: #00313c;
+}
+
+.beige-font {
+  color: #f1f4d8;
+}
+
+.red-font {
+  color: #ff6572;
 }
 
 .letter-icon {
@@ -20,34 +48,20 @@
   margin: 10px;
 }
 .heading-container .contact-heading {
-  background-color: #FFC300;
-  color: #FFFFFF;
-  clip-path: polygon(100% 0, 0 15%, 3% 100%, 98% 90%);
+  background-color: #ff6572;
 }
 .heading-container .contact-subheading {
   width: 100%;
   flex-basis: auto;
   font-size: 1.5rem;
-  color: #a89e93;
-}
-.heading-container .contact-thirdheading {
-  width: 100%;
-  font-size: 2rem;
-  flex-basis: auto;
-  color: #a89e93;
-  display: inline-block;
-  transition: all 0.4s ease-in-out;
-}
-.heading-container .contact-thirdheading a {
-  color: #000000;
-  transition: all 0.4s ease-in-out;
-}
-.heading-container .contact-thirdheading a:hover {
-  color: #CD6F00;
 }
 .heading-container .contact-link {
   font-size: 1.7rem;
+  color: #ffcd8d;
   font-weight: bold;
+}
+.heading-container .contact-link:hover {
+  color: #f1f4d8;
 }
 
 @media all and (max-width: 768px) {

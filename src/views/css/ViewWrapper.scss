@@ -18,7 +18,7 @@ html {
 
 body {
   text-align: center;
-  font-family: Poppins, sans-serif;
+  font-family: Nunito, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -64,6 +64,7 @@ body {
 }
 
 .section-heading {
+  border-radius: 10px;
   font-size: 2.5rem;
   font-weight: 700;
   padding: 20px;
@@ -79,11 +80,10 @@ body {
 
 .section-text {
   text-align: left;
-  font-size: 1.5rem;
-  padding: 15px 15px 20px;
-  font-weight: 300;
+  font-size: 1.4rem;
+  padding: 20px;
+  font-weight: 600;
 }
-
 
 // Laptop: 769 min - 1024 max
 // Make container smaller
@@ -145,7 +145,7 @@ body {
   }
 
   .section-text {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 }
 
@@ -159,22 +159,6 @@ and (-webkit-min-device-pixel-ratio: 1.5) {
   }
 }
 
-.betweener {
-  background-color: #FFC300;
-  width: 100%;
-  height: 40px;
-}
-.betweener-in {
-  margin-top: -5px;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 20%);
-}
-
-.betweener-out {
-  margin-bottom: -5px;
-  clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 80%);
-}
-
-
 .fade-enter {
   opacity: 0;
   z-index: 1;
@@ -182,7 +166,7 @@ and (-webkit-min-device-pixel-ratio: 1.5) {
 
 .fade-enter.fade-enter-active {
   opacity: 1;
-  transition: opacity 250ms ease-in;
+  transition: opacity 0.25s ease-in;
 }
 
 

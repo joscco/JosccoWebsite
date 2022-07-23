@@ -1,0 +1,55 @@
+.yellow {
+  background-color: #ffcd8d;
+}
+
+.dark {
+  background-color: #00313c;
+}
+
+.beige {
+  background-color: #f1f4d8;
+}
+
+.red {
+  background-color: #ff6572;
+}
+
+.yellow-font {
+  color: #ffcd8d;
+}
+
+.dark-font {
+  color: #00313c;
+}
+
+.beige-font {
+  color: #f1f4d8;
+}
+
+.red-font {
+  color: #ff6572;
+}
+
+.betweener {
+  width: 100%;
+  height: 40px;
+}
+
+.betweener-in {
+  margin-top: -5px;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 20%);
+}
+
+.betweener-back {
+  margin-top: -35px;
+  margin-bottom: -5px;
+  z-index: -1;
+  height: 40px;
+}
+
+.betweener-out {
+  margin-top: -5px;
+  clip-path: polygon(0 0, 100% 0, 100% 20%, 0 100%);
+}
+
+/*# sourceMappingURL=Betweener.css.map */

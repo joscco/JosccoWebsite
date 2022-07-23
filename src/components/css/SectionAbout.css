@@ -1,11 +1,38 @@
-#about {
-  background-color: #FFFFFF;
+.yellow {
+  background-color: #ffcd8d;
+}
+
+.dark {
+  background-color: #00313c;
+}
+
+.beige {
+  background-color: #f1f4d8;
+}
+
+.red {
+  background-color: #ff6572;
+}
+
+.yellow-font {
+  color: #ffcd8d;
+}
+
+.dark-font {
+  color: #00313c;
+}
+
+.beige-font {
+  color: #f1f4d8;
+}
+
+.red-font {
+  color: #ff6572;
 }
 
 .about-heading {
-  background-color: #FFC300;
-  color: #FFFFFF;
-  clip-path: polygon(0 0, 100% 15%, 94% 100%, 2% 90%);
+  background-color: #00313c;
+  color: #f1f4d8;
 }
 
 .notebook-image {

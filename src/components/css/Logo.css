@@ -1,3 +1,35 @@
+.yellow {
+  background-color: #ffcd8d;
+}
+
+.dark {
+  background-color: #00313c;
+}
+
+.beige {
+  background-color: #f1f4d8;
+}
+
+.red {
+  background-color: #ff6572;
+}
+
+.yellow-font {
+  color: #ffcd8d;
+}
+
+.dark-font {
+  color: #00313c;
+}
+
+.beige-font {
+  color: #f1f4d8;
+}
+
+.red-font {
+  color: #ff6572;
+}
+
 svg {
   height: 80px;
   transition: all 0.4s ease-in-out;
@@ -8,7 +40,7 @@ svg {
 }
 
 svg:hover .backblack {
-  fill: #CD6F00;
+  fill: #ff6572;
 }
 
 /*# sourceMappingURL=Logo.css.map */

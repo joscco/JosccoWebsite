@@ -1,6 +1,4 @@
-#contact {
-  background-color: #FFFFFF;
-}
+@import "Global.scss";
 
 .letter-icon {
   height: 40px;
@@ -23,42 +21,25 @@
   }
 
   .contact-heading {
-    background-color: #FFC300;
-    color: #FFFFFF;
-    clip-path: polygon(100% 0, 0 15%, 3% 100%, 98% 90%);
+    background-color: $red;
   }
 
   .contact-subheading {
     width: 100%;
     flex-basis: auto;
     font-size: 1.5rem;
-    color: #a89e93;
-  }
-
-  .contact-thirdheading {
-    width: 100%;
-    font-size: 2rem;
-    flex-basis: auto;
-    color: #a89e93;
-    display: inline-block;
-    transition: all 0.4s ease-in-out;
-
-    a {
-      color: #000000;
-      transition: all 0.4s ease-in-out;
-    }
-
-    a:hover {
-      color: #CD6F00;
-    }
   }
 
   .contact-link {
     font-size: 1.7rem;
+    color: $yellow;
     font-weight: bold;
   }
-}
 
+  .contact-link:hover {
+    color: $beige;
+  }
+}
 
 // All Code for less than 768px width
 @media all and (max-width: 768px) {

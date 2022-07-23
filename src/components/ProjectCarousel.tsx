@@ -1,16 +1,16 @@
 import React from "react";
 import "./css/ProjectCarousel.css"
-import dicity from "./images/dicity.png"
-import ludumDare50 from "./images/ludumDare50.png"
-import adventsKalender2021 from "./images/adventsKalender2021.png"
-import arrowLeft from "./images/arrow_left.svg"
-import arrowRight from "./images/arrow_right.svg"
-import wildNight from "./images/wildNight.png";
-import jamesBot from "./images/jamesBot.png";
-import ramenGod from "./images/ramengod.png";
-import masterThesis from "./images/eulers_totient_plot.png";
-import bachelorThesis from "./images/poisson_points.png";
-import zuckerWatte from "./images/zuckerwatte.png";
+import dicity from "../images/ProjectSection/ProjectTeasers/dicity.png"
+import ludumDare50 from "../images/ProjectSection/ProjectTeasers/ludumDare50.png"
+import adventsKalender2021 from "../images/ProjectSection/ProjectTeasers/adventsKalender2021.png"
+import arrowLeft from "../images/ProjectSection/arrow_left.png"
+import arrowRight from "../images/ProjectSection/arrow_right.png"
+import wildNight from "../images/ProjectSection/ProjectTeasers/wildNight.png";
+import jamesBot from "../images/ProjectSection/ProjectTeasers/jamesBot.png";
+import ramenGod from "../images/ProjectSection/ProjectTeasers/ramengod.png";
+import masterThesis from "../images/ProjectSection/ProjectTeasers/eulers_totient_plot.png";
+import bachelorThesis from "../images/ProjectSection/ProjectTeasers/poisson_points.png";
+import zuckerWatte from "../images/ProjectSection/ProjectTeasers/zuckerwatte.png";
 import {Link} from "react-router-dom";
 
 export class ProjectCarousel extends React.Component {
@@ -38,26 +38,27 @@ export class ProjectCarousel extends React.Component {
     render() {
         let items = PROJECTS.map((item, index) => this.createItem(item, index));
         let indicators = this.createIndicators(PROJECTS.length);
-        return <div ref={this.projectCarousel} id="projects-carousel" className="container-box carousel slide"
+        return <div ref={this.projectCarousel}
+                    id="projectsCarousel"
+                    className="container-box carousel slide"
                     data-ride="carousel">
-            {indicators}
             <div className="carousel-inner">
                 {items}
             </div>
-            <a className="carousel-control-prev" href={"#projects-carousel"} role="button" data-slide="prev">
+            {indicators}
+            <a className="carousel-control-prev" href="#projectsCarousel" role="button" data-slide="prev">
                 <img className="arrow arrow-left" src={arrowLeft} alt="left-arrow"/>
             </a>
-            <a className="carousel-control-next" href={"#projects-carousel"} role="button" data-slide="next">
+            <a className="carousel-control-next" href="#projectsCarousel" role="button" data-slide="next">
                 <img className="arrow arrow-right" src={arrowRight} alt="right-arrow"/>
             </a>
         </div>;
     }
 
     createIndicators(length: number) {
-        let items = Array.from(Array(length).keys()).map(number => <li data-target="#carouselExampleIndicators"
-                                                                       data-slide-to={number} key={number}
+        let items = Array.from(Array(length).keys()).map(number => <li data-slide-to={number} key={number}
                                                                        className={number === 0 ? "active" : ""}/>);
-        return <ol data-target="#projects-carousel" className="carousel-indicators">
+        return <ol data-target="#projectsCarousel" className="carousel-indicators">
             {items}
         </ol>
     }

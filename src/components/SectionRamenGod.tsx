@@ -1,13 +1,13 @@
 import React from "react";
 import "./css/SectionStart.css";
-import oldImage from "./images/ramen-god/oldImage.jpg";
-import sketchImage from "./images/ramen-god/sketchImage.png";
-import linesImage from "./images/ramen-god/lineImage.png";
-import firstColorsImage from "./images/ramen-god/firstColorImage.png";
-import preFinalImage from "./images/ramen-god/preFinalImage.png";
-import finalImage from "./images/ramen-god/finalImage.png";
-import arrowLeft from "./images/arrow_left.svg";
-import arrowRight from "./images/arrow_right.svg";
+import oldImage from "../images/RamenGodPage/oldImage.jpg";
+import sketchImage from "../images/RamenGodPage/sketchImage.png";
+import linesImage from "../images/RamenGodPage/lineImage.png";
+import firstColorsImage from "../images/RamenGodPage/firstColorImage.png";
+import preFinalImage from "../images/RamenGodPage/preFinalImage.png";
+import finalImage from "../images/RamenGodPage/finalImage.png";
+import arrowLeft from "../images/ProjectSection/arrow_left.png";
+import arrowRight from "../images/ProjectSection/arrow_right.png";
 
 export class SectionRamenGod extends React.Component {
 

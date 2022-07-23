@@ -1,7 +1,6 @@
 .fancy-hand {
   width: 100%;
   position: relative;
-  overflow: hidden;
   z-index: 1;
 }
 .fancy-hand * {
@@ -20,6 +19,16 @@
 }
 .fancy-hand .hand-image {
   height: 90%;
+  z-index: 1;
+}
+.fancy-hand .hand-image-eyes {
+  height: 7.5%;
+  transform: translate(-70%, 25%);
+  z-index: 1;
+}
+.fancy-hand .hand-image-mouth {
+  height: 8%;
+  transform: translate(-85%, 30%);
   z-index: 1;
 }
 

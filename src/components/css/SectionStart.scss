@@ -1,13 +1,12 @@
-#start {
-  background-color: #FFC300;
-}
+@import "Global.scss";
 
 .start-text {
+  align-self: flex-end;
   text-align: left;
-  color: #CD6F00;
 }
 
 .start-heading {
-  background-color: #FFFFFF;
-  clip-path: polygon(3% 5%, 97% 0, 100% 95%, 0% 100%);
+  border-style: dashed;
+  border-width: 5px;
+  border-color: $red;
 }

@@ -1,5 +1,8 @@
+@import "Global";
+
 .skill-item.clickable-skill:hover {
-  background-color: #CD6F00;
+  color: $beige;
+  background-color: $dark;
   cursor: pointer;
 }
 
@@ -13,16 +16,16 @@
   vertical-align: top;
   align-items: center;
   flex-direction: column;
-  color: #FFF;
-  background-color: #000;
+  background-color: $beige;
+  color: $dark;
   border-radius: 10px;
-  transition: all 0.6s ease-in-out;
+  transition: all 0.2s ease-out;
   overflow: hidden;
 }
 
 .skill-title {
   font-size: 1.5rem;
-  font-weight: bolder;
+  font-weight: bold;
   margin: 10px;
 }
 
@@ -34,16 +37,10 @@
 
 .language-text {
   display: inline;
-  text-decoration: underline;
-  text-decoration-thickness: 5px;
-  text-decoration-color: #FFC300;
 }
 
 .tool-text {
   display: inline;
-  text-decoration: underline;
-  text-decoration-thickness: 5px;
-  text-decoration-color: #CD6F00;
 }
 .expanded {
   max-height: 300px;

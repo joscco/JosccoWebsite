@@ -1,34 +1,36 @@
+@import "Global";
+
 .nav-bar-item {
-  background-color: rgba(255, 195, 0, 0.6);
+  background-color: $beige;
   font-size: 1.7rem;
-  font-weight: 300;
+  font-weight: 400;
   flex: 1 1 0;
   height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 15px;
+  border-radius: 5px;
   transition: all 0.4s ease-in-out;
 }
 
+.nav-bar-item:hover {
+  background-color: $red;
+}
+
 a {
-  color: #000;
+  color: $dark;
   text-decoration: none;
   transition: all 0.4s ease-in-out;
 }
 
 a:hover {
-  color: #CD6F00;
+  color: $beige;
   text-decoration: none;
 }
 
 .nav-bar-item.active {
-  background-color: #000;
-  color: #FFF;
-}
-
-.nav-bar-item.active:hover {
-  background-color: #CD6F00;
+  background-color: $dark;
+  color: $beige;
 }
 
 @media screen and (max-width: 1024px) {
@@ -39,7 +41,7 @@ a:hover {
 
 @media screen and (max-width: 768px) {
   .nav-bar-item {
-    background-color: #FFF;
+    background-color: $beige;
     font-size: 2rem;
   }
 }

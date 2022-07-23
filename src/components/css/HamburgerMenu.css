@@ -1,22 +1,54 @@
+.yellow {
+  background-color: #ffcd8d;
+}
+
+.dark {
+  background-color: #00313c;
+}
+
+.beige {
+  background-color: #f1f4d8;
+}
+
+.red {
+  background-color: #ff6572;
+}
+
+.yellow-font {
+  color: #ffcd8d;
+}
+
+.dark-font {
+  color: #00313c;
+}
+
+.beige-font {
+  color: #f1f4d8;
+}
+
+.red-font {
+  color: #ff6572;
+}
+
 .hamburger-menu {
   display: none;
   justify-content: left;
   align-items: center;
   flex-direction: column;
   width: 60px;
-  height: 60px;
+  height: 80px;
   margin-left: auto;
-  align-self: center;
   transition: all 0.4s ease-in-out;
   cursor: pointer;
 }
 
 .patty {
-  height: 15%;
+  height: 10px;
   width: 100%;
   margin: auto 0;
-  border-radius: 5px;
-  background-color: #000;
+  outline: 5px solid #00313c;
+  border-radius: 3px;
+  background-color: #f1f4d8;
   transition: all 0.4s ease-in-out;
 }
 
@@ -26,10 +58,10 @@
   }
 
   .hamburger-menu.active .patty-one {
-    transform: translateY(10px) rotate(45deg);
+    transform: translateY(13px) rotate(45deg);
   }
   .hamburger-menu.active .patty-two {
-    transform: translateY(-10px) rotate(-45deg);
+    transform: translateY(-13px) rotate(-45deg);
   }
   .hamburger-menu.active .patty-three {
     transform: translateX(400%);
