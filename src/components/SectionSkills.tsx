@@ -31,11 +31,11 @@ export class SectionSkills extends React.Component<{ heading: string, headingCla
 const languageSkillItems = [
     {
         title: "Java",
-        description: "main language at work",
+        description: "is my main language at work",
     },
     {
         title: "Typescript",
-        description: "main language for private web projects",
+        description: "id my main language for private web projects",
     },
     {
         title: "Javascript",
@@ -58,10 +58,12 @@ const languageSkillItems = [
 
 const toolSkillItems = [
     {
-        title: "Swing"
+        title: "Swing",
+        description: "was used for building GUIs at my old job"
     },
     {
-        title: "Lucene"
+        title: "Lucene",
+        description: "used to enhance searching speed intensively compared with database search"
     },
     {
         title: "Hibernate"
@@ -92,7 +94,7 @@ const toolSkillItems = [
 export class SectionWorkExperience extends React.Component {
     render() {
         return <div className="section red">
-            <div className="sub-section section-heading">
+            <div className="sub-section section-heading skill-heading">
                 Work Experience
             </div>
             <div className="sub-section">

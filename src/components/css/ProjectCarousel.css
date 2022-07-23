@@ -95,6 +95,15 @@
 
 .carousel-indicators li {
   transition: all 0.3s ease-in-out;
+  border: 2px solid #00313c;
+  background-color: #f1f4d8;
+  width: 15px;
+  height: 15px;
+  border-radius: 10px;
+}
+
+.carousel-indicators .active {
+  background-color: #00313c;
 }
 
 .project-item-link::before {
@@ -103,7 +112,7 @@
   align-items: center;
   justify-content: center;
   font-size: 3rem;
-  content: ">> to the project";
+  content: ">> TO PROJECT";
   color: #00313c;
   position: absolute;
   left: 0;
@@ -116,7 +125,7 @@
 }
 
 .project-item-link:hover::before {
-  opacity: 1;
+  opacity: 0.75;
 }
 
 /*# sourceMappingURL=ProjectCarousel.css.map */

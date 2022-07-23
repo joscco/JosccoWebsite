@@ -1,8 +1,9 @@
 @import "Global";
 
 .about-heading {
-  background-color: $dark;
-  color: $beige;
+  color: $red;
+  background-color: $yellow;
+  outline: 5px dashed $yellow;
 }
 
 .notebook-image {

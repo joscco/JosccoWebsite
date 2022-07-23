@@ -40,7 +40,7 @@ export class ProjectCarousel extends React.Component {
         let indicators = this.createIndicators(PROJECTS.length);
         return <div ref={this.projectCarousel}
                     id="projectsCarousel"
-                    className="container-box carousel slide"
+                    className="container-box slide carousel"
                     data-ride="carousel">
             <div className="carousel-inner">
                 {items}
@@ -56,9 +56,12 @@ export class ProjectCarousel extends React.Component {
     }
 
     createIndicators(length: number) {
-        let items = Array.from(Array(length).keys()).map(number => <li data-slide-to={number} key={number}
-                                                                       className={number === 0 ? "active" : ""}/>);
-        return <ol data-target="#projectsCarousel" className="carousel-indicators">
+        let items = Array.from(Array(length).keys()).map(number =>
+            <li data-target="#projectsCarousel"
+                key={number}
+                data-slide-to={number}
+                className={number === 0 ? "active" : ""}/>);
+        return <ol className="carousel-indicators">
             {items}
         </ol>
     }
@@ -80,7 +83,7 @@ const PROJECTS: ProjectItemType[] = [{
     imageAlt: "Dicity",
     heading: "Dicity",
     description: "A Game for the GMTK 2022 Game Jam"
-},{
+}, {
     hasSubPage: false,
     link: "https://joscco.itch.io/dating-under-the-comet",
     imagePath: ludumDare50,

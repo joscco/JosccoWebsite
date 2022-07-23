@@ -4,7 +4,7 @@ import "./css/SectionAbout.css"
 
 export class SectionAbout extends React.Component {
     render() {
-        return <section id="about" className="section beige">
+        return <section id="about" className="section beige dark-font">
             <div className="sub-section reverse-section">
                 <div className="container-box">
                     <div className="section-heading about-heading">About Me</div>
