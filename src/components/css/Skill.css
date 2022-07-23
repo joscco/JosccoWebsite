@@ -39,8 +39,8 @@
 .skill-item {
   min-width: 100px;
   max-width: 200px;
-  min-height: 45px;
-  max-height: 45px;
+  min-height: 50px;
+  max-height: 50px;
   display: flex;
   text-align: left;
   align-items: center;

@@ -31,9 +31,7 @@
 }
 
 .about-heading {
-  color: #ff6572;
-  background-color: #ffcd8d;
-  outline: 5px dashed #ffcd8d;
+  outline: 5px dashed #f1f4d8;
 }
 
 .notebook-image {

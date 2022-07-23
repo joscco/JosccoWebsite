@@ -48,7 +48,7 @@
   margin: 10px;
 }
 .heading-container .contact-heading {
-  background-color: #ff6572;
+  outline: 5px dashed #ff6572;
 }
 .heading-container .contact-subheading {
   width: 100%;

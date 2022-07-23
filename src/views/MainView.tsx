@@ -12,9 +12,9 @@ export class MainView extends React.Component {
         return <div>
             <NavBar/>
             <SectionStart/>
-            <BetweenerIn color1="dark" color2="beige"/>
+            <BetweenerIn color1="dark" color2="yellow"/>
             <SectionAbout/>
-            <BetweenerOut color1="beige" color2="red"/>
+            <BetweenerOut color1="yellow" color2="red"/>
             <SectionWorkExperience/>
             <BetweenerIn color1="red" color2="beige"/>
             <SectionProjects/>
