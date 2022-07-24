@@ -36,7 +36,9 @@
 
 .about-heading {
   z-index: 6;
-  outline: 5px dashed #f1f4d8;
+  border-style: dashed;
+  border-width: 5px;
+  border-color: #f1f4d8;
 }
 
 /*# sourceMappingURL=SectionAbout.css.map */

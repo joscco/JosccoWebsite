@@ -14,5 +14,7 @@
 }
 
 .skill-heading {
-  outline: 5px dashed $dark;
+  border-style: dashed;
+  border-width: 5px;
+  border-color: $dark;
 }

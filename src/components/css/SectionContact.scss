@@ -21,7 +21,9 @@
   }
 
   .contact-heading {
-    outline: 5px dashed $red;
+    border-style: dashed;
+    border-width: 5px;
+    border-color: $red;
   }
 
   .contact-subheading {

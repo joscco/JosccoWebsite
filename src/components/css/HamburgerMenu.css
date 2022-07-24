@@ -46,7 +46,9 @@
   height: 10px;
   width: 100%;
   margin: auto 0;
-  outline: 5px solid #00313c;
+  border-style: solid;
+  border-width: 5px;
+  border-color: #00313c;
   border-radius: 3px;
   background-color: #f1f4d8;
   transition: all 0.4s ease-in-out;
