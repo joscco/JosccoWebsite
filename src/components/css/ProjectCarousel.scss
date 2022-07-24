@@ -5,7 +5,8 @@ $item-banner-height: 350px;
 $arrow-height: 80px;
 
 .arrow {
-  position: relative;
+  position: absolute;
+  top: 200px;
   height: $arrow-height;
 }
 
@@ -71,7 +72,7 @@ $arrow-height: 80px;
 }
 
 .carousel-indicators {
-  bottom: 520px;
+  top: -30px;
   z-index: 0;
 }
 
