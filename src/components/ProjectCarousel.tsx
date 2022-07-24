@@ -1,16 +1,16 @@
 import React from "react";
 import "./css/ProjectCarousel.css"
 import dicity from "../images/ProjectSection/ProjectTeasers/dicity.png"
-import ludumDare50 from "../images/ProjectSection/ProjectTeasers/ludumDare50.png"
-import adventsKalender2021 from "../images/ProjectSection/ProjectTeasers/adventsKalender2021.png"
+import ludumDare50 from "../images/ProjectSection/ProjectTeasers/ludumDare2022.png"
+import adventsKalender2021 from "../images/ProjectSection/ProjectTeasers/adventskalender2021.png"
 import arrowLeft from "../images/ProjectSection/arrow_left.png"
 import arrowRight from "../images/ProjectSection/arrow_right.png"
-import wildNight from "../images/ProjectSection/ProjectTeasers/wildNight.png";
+import wildNight from "../images/ProjectSection/ProjectTeasers/schick2021.png";
 import jamesBot from "../images/ProjectSection/ProjectTeasers/jamesBot.png";
-import ramenGod from "../images/ProjectSection/ProjectTeasers/ramengod.png";
-import masterThesis from "../images/ProjectSection/ProjectTeasers/eulers_totient_plot.png";
-import bachelorThesis from "../images/ProjectSection/ProjectTeasers/poisson_points.png";
-import zuckerWatte from "../images/ProjectSection/ProjectTeasers/zuckerwatte.png";
+import ramenGod from "../images/ProjectSection/ProjectTeasers/ramenGod.png";
+import masterThesis from "../images/ProjectSection/ProjectTeasers/masterThesis.png";
+import bachelorThesis from "../images/ProjectSection/ProjectTeasers/bachelorThesis.png";
+import zuckerWatte from "../images/ProjectSection/ProjectTeasers/schick2015.png";
 import {Link} from "react-router-dom";
 
 export class ProjectCarousel extends React.Component {
@@ -112,19 +112,19 @@ const PROJECTS: ProjectItemType[] = [{
     heading: "James Reminder Bot",
     description: "A Telegram Bot for Birthday and Garbage Day Reminders."
 }, {
-    hasSubPage: true,
-    link: "/ramen-god",
-    imagePath: ramenGod,
-    imageAlt: "Ramen God Image",
-    heading: "Ramen God",
-    description: "An Illustration I did for a very great soup"
-}, {
     hasSubPage: false,
     link: "./pdf/master_thesis_schmitz.pdf",
     imagePath: masterThesis,
     imageAlt: "Master Thesis Image",
     heading: "Master Thesis",
     description: "On the Turán-Kubilius-Inequality in Number Theory"
+}, {
+    hasSubPage: true,
+    link: "/ramen-god",
+    imagePath: ramenGod,
+    imageAlt: "Ramen God Image",
+    heading: "Ramen God",
+    description: "An Illustration I did for a very great soup"
 }, {
     hasSubPage: false,
     link: "./pdf/bachelor_thesis_schmitz.pdf",

@@ -38,6 +38,7 @@ $arrow-height: 80px;
     display: flex;
     object-fit: cover;
     object-position: top;
+    cursor: pointer;
   }
   
   .project-text {
@@ -90,6 +91,7 @@ $arrow-height: 80px;
 
 .project-item-link::before {
   z-index: 2;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;

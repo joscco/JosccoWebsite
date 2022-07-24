@@ -63,6 +63,7 @@
   display: flex;
   object-fit: cover;
   object-position: top;
+  cursor: pointer;
 }
 .project-item .project-text {
   height: 100%;
@@ -110,6 +111,7 @@
 
 .project-item-link::before {
   z-index: 2;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
