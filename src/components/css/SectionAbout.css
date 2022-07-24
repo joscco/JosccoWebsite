@@ -30,12 +30,13 @@
   color: #ff6572;
 }
 
-.about-heading {
-  outline: 5px dashed #f1f4d8;
+.about-text {
+  z-index: 6;
 }
 
-.notebook-image {
-  width: 100%;
+.about-heading {
+  z-index: 6;
+  outline: 5px dashed #f1f4d8;
 }
 
 /*# sourceMappingURL=SectionAbout.css.map */
