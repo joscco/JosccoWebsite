@@ -37,6 +37,7 @@
 
 .betweener-in {
   margin-top: -5px;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 20%);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 20%);
 }
 
@@ -49,6 +50,7 @@
 
 .betweener-out {
   margin-top: -5px;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 20%, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 20%, 0 100%);
 }
 

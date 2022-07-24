@@ -93,7 +93,7 @@ const toolSkillItems = [
 
 export class SectionWorkExperience extends React.Component {
     render() {
-        return <div className="section red dark-font">
+        return <div className="section red yellow-font">
             <div className="sub-section section-heading skill-heading">
                 Work Experience
             </div>

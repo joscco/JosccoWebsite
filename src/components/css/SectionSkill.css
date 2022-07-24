@@ -39,8 +39,12 @@
   gap: 15px;
 }
 
+.skill-container {
+  padding: 20px;
+}
+
 .skill-heading {
-  outline: 5px dashed #ffcd8d;
+  outline: 5px dashed #00313c;
 }
 
 /*# sourceMappingURL=SectionSkill.css.map */

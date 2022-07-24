@@ -32,7 +32,6 @@
 
 .arrow {
   position: relative;
-  top: -60px;
   height: 80px;
 }
 
@@ -47,11 +46,12 @@
 }
 
 .carousel-inner {
+  background-color: #f1f4d8;
   max-width: 800px;
 }
 
 .project-item {
-  height: 520px;
+  min-height: 520px;
 }
 .project-item .project-item-link {
   width: 100%;
@@ -67,17 +67,19 @@
 .project-item .project-text {
   height: 100%;
   width: 100%;
-  padding: 5px 20px;
+  padding: 10px 20px;
 }
 .project-item .project-text .project-item-heading {
-  padding: 3px 0;
+  padding: 5px 0;
   text-align: left;
   font-weight: bold;
   font-size: 2rem;
+  color: #00313c;
 }
 .project-item .project-text .project-item-description {
   font-size: 1.2rem;
   text-align: left;
+  color: #00313c;
 }
 
 .carousel-control-prev {
@@ -112,20 +114,21 @@
   align-items: center;
   justify-content: center;
   font-size: 3rem;
-  content: ">> TO PROJECT";
-  color: #00313c;
+  font-weight: 700;
+  content: ">> To the Project";
+  color: #f1f4d8;
+  background-color: #00313c;
   position: absolute;
   left: 0;
-  top: 100px;
+  top: 0;
   width: 100%;
-  height: 200px;
-  background: #f1f4d8;
+  height: 100px;
   opacity: 0;
   transition: 0.5s ease;
 }
 
 .project-item-link:hover::before {
-  opacity: 0.75;
+  opacity: 1;
 }
 
 /*# sourceMappingURL=ProjectCarousel.css.map */

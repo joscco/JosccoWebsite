@@ -6,7 +6,6 @@ $arrow-height: 80px;
 
 .arrow {
   position: relative;
-  top: -60px;
   height: $arrow-height;
 }
 
@@ -21,11 +20,12 @@ $arrow-height: 80px;
 }
 
 .carousel-inner {
+  background-color: $beige;
   max-width: 800px;
 }
 
 .project-item {
-  height: $item-height;
+  min-height: $item-height;
 
   .project-item-link {
     width: 100%;
@@ -43,18 +43,20 @@ $arrow-height: 80px;
   .project-text {
     height: 100%;
     width: 100%;
-    padding: 5px 20px;
+    padding: 10px 20px;
 
     .project-item-heading {
-      padding: 3px 0;
+      padding: 5px 0;
       text-align: left;
       font-weight: bold;
       font-size: 2rem;
+      color: $dark;
     }
 
     .project-item-description {
       font-size: 1.2rem;
       text-align: left;
+      color: $dark;
     }
   }
 }
@@ -92,18 +94,19 @@ $arrow-height: 80px;
   align-items: center;
   justify-content: center;
   font-size: 3rem;
-  content: '>> TO PROJECT';
-  color: $dark;
+  font-weight: 700;
+  content: '>> To the Project';
+  color: $beige;
+  background-color: $dark;
   position: absolute;
   left: 0;
-  top: 100px;
+  top: 0;
   width: 100%;
-  height: 200px;
-  background: $beige;
+  height: 100px;
   opacity: 0;
   transition: .5s ease;
 }
 
 .project-item-link:hover::before {
-  opacity: 0.75;
+  opacity: 1;
 }

@@ -96,14 +96,14 @@ const PROJECTS: ProjectItemType[] = [{
     imagePath: adventsKalender2021,
     imageAlt: "Adventskalender 2021",
     heading: "Adventskalender 2021",
-    description: "An interactive Pixi.js advent calender"
+    description: "An interactive Pixi.js Advent Calender"
 }, {
     hasSubPage: false,
     link: "./pdf/WildNightComic_Joscco.pdf",
     imagePath: wildNight,
     imageAlt: "Wildnight Comic Image",
     heading: "Wild Night",
-    description: "A comic I drew for SCHICK Magazine #14"
+    description: "A Comic I drew for SCHICK Magazine #14"
 }, {
     hasSubPage: false,
     link: "https://github.com/joscco/JamesBot",
@@ -117,7 +117,7 @@ const PROJECTS: ProjectItemType[] = [{
     imagePath: ramenGod,
     imageAlt: "Ramen God Image",
     heading: "Ramen God",
-    description: "An illustration I did for a very great soup"
+    description: "An Illustration I did for a very great soup"
 }, {
     hasSubPage: false,
     link: "./pdf/master_thesis_schmitz.pdf",
@@ -131,13 +131,13 @@ const PROJECTS: ProjectItemType[] = [{
     imagePath: bachelorThesis,
     imageAlt: "Bachelor Thesis Image",
     heading: "Bachelor Thesis",
-    description: "On point processes, mainly the poisson kind."
+    description: "On point processes, mainly the Poisson kind."
 }, {
     hasSubPage: false,
     link: "./pdf/schick_8_schmitz.pdf",
     imagePath: zuckerWatte,
     imageAlt: "Zuckerwatte Comic",
     heading: "Zuckerwatte",
-    description: "A comic I drew for SCHICK Magazine #8"
+    description: "A Comic I drew for SCHICK Magazine #8"
 }
 ];
