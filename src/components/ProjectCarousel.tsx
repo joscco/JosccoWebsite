@@ -2,12 +2,12 @@ import React from "react";
 import "./css/ProjectCarousel.css"
 import dicity from "../images/ProjectSection/ProjectTeasers/dicity.png"
 import ludumDare50 from "../images/ProjectSection/ProjectTeasers/ludumDare2022.png"
-import adventsKalender2021 from "../images/ProjectSection/ProjectTeasers/adventskalender2021.png"
+import adventsKalender2021 from "../images/ProjectSection/ProjectTeasers/adventsKalender2021.png"
 import arrowLeft from "../images/ProjectSection/arrow_left.png"
 import arrowRight from "../images/ProjectSection/arrow_right.png"
 import wildNight from "../images/ProjectSection/ProjectTeasers/schick2021.png";
 import jamesBot from "../images/ProjectSection/ProjectTeasers/jamesBot.png";
-import ramenGod from "../images/ProjectSection/ProjectTeasers/ramenGod.png";
+import ramenGod from "../images/ProjectSection/ProjectTeasers/ramengod.png";
 import masterThesis from "../images/ProjectSection/ProjectTeasers/masterThesis.png";
 import bachelorThesis from "../images/ProjectSection/ProjectTeasers/bachelorThesis.png";
 import zuckerWatte from "../images/ProjectSection/ProjectTeasers/schick2015.png";
