@@ -42,10 +42,10 @@ export class ProjectCarousel extends React.Component {
                     id="projectsCarousel"
                     className="container-box slide carousel"
                     data-ride="carousel">
+            {indicators}
             <div className="carousel-inner">
                 {items}
             </div>
-            {indicators}
             <a className="carousel-control-prev" href="#projectsCarousel" role="button" data-slide="prev">
                 <img className="arrow arrow-left" src={arrowLeft} alt="left-arrow"/>
             </a>

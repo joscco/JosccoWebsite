@@ -93,7 +93,7 @@
 }
 
 .carousel-indicators {
-  top: -30px;
+  position: relative;
   z-index: 0;
 }
 
