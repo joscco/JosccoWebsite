@@ -94,8 +94,12 @@ const toolSkillItems = [
 export class SectionWorkExperience extends React.Component {
     render() {
         return <div className="section red yellow-font">
-            <div className="sub-section section-heading skill-heading">
-                Work Experience
+            <div className="sub-section">
+                <div className="container-box">
+                    <div className="section-heading skill-heading">
+                        Work Experience
+                    </div>
+                </div>
             </div>
             <div className="sub-section">
                 <SectionSkills heading="Languages" headingClass="language-text" items={languageSkillItems}/>
