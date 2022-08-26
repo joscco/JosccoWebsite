@@ -11,6 +11,7 @@ import ramenGod from "../images/ProjectSection/ProjectTeasers/ramengod.png";
 import masterThesis from "../images/ProjectSection/ProjectTeasers/masterThesis.png";
 import bachelorThesis from "../images/ProjectSection/ProjectTeasers/bachelorThesis.png";
 import zuckerWatte from "../images/ProjectSection/ProjectTeasers/schick2015.png";
+import schick2022 from "../images/ProjectSection/ProjectTeasers/schick2022.png";
 import {Link} from "react-router-dom";
 
 export class ProjectCarousel extends React.Component {
@@ -77,6 +78,13 @@ type ProjectItemType = {
 }
 
 const PROJECTS: ProjectItemType[] = [{
+    hasSubPage: false,
+    link: "./pdf/schick_15_schmitz.pdf",
+    imagePath: schick2022,
+    imageAlt: "Schick 2022 Preview",
+    heading: "Schick 15",
+    description: "A Comic I drew for SCHICK Magazine #15"
+}, {
     hasSubPage: false,
     link: "https://joscco.itch.io/dicity",
     imagePath: dicity,
