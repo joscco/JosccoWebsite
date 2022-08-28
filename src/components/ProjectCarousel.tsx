@@ -30,8 +30,8 @@ export class ProjectCarousel extends React.Component {
         return <div key={index} className={"carousel-item project-item" + ((index === 0) ? " active" : "")}>
             {itemLink}
             <div className="project-text">
-                <div className="project-item-heading">{item.heading}</div>
                 <div className="project-item-description">{item.description}</div>
+                <div className="project-time">{item.time}</div>
             </div>
         </div>
     }
@@ -73,7 +73,7 @@ type ProjectItemType = {
     link: string,
     imagePath: any,
     imageAlt: string,
-    heading: string,
+    time: string,
     description: string
 }
 
@@ -82,70 +82,70 @@ const PROJECTS: ProjectItemType[] = [{
     link: "./pdf/schick_15_schmitz.pdf",
     imagePath: schick2022,
     imageAlt: "Schick 2022 Preview",
-    heading: "Schick 15",
+    time: "August 2022",
     description: "A Comic I drew for SCHICK Magazine #15"
 }, {
     hasSubPage: false,
     link: "https://joscco.itch.io/dicity",
     imagePath: dicity,
     imageAlt: "Dicity",
-    heading: "Dicity",
+    time: "June 2022",
     description: "A Game for the GMTK 2022 Game Jam"
 }, {
     hasSubPage: false,
     link: "https://joscco.itch.io/dating-under-the-comet",
     imagePath: ludumDare50,
     imageAlt: "Dating under the Comet",
-    heading: "Dating under the Comet",
+    time: "April 2022",
     description: "A Game for the Ludum Dare 50 Game Jam"
 }, {
     hasSubPage: false,
     link: "https://joscco.github.io/Adventskalender2021",
     imagePath: adventsKalender2021,
     imageAlt: "Adventskalender 2021",
-    heading: "Adventskalender 2021",
+    time: "November 2021",
     description: "An interactive Pixi.js Advent Calender"
 }, {
     hasSubPage: false,
     link: "./pdf/WildNightComic_Joscco.pdf",
     imagePath: wildNight,
     imageAlt: "Wildnight Comic Image",
-    heading: "Wild Night",
+    time: "August 2021",
     description: "A Comic I drew for SCHICK Magazine #14"
 }, {
     hasSubPage: false,
     link: "https://github.com/joscco/JamesBot",
     imagePath: jamesBot,
     imageAlt: "James Bot Image",
-    heading: "James Reminder Bot",
-    description: "A Telegram Bot for Birthday and Garbage Day Reminders."
+    time: "Somewhen in 2021",
+    description: "A Telegram Bot for Birthday and Garbage Day Reminders"
 }, {
     hasSubPage: false,
     link: "./pdf/master_thesis_schmitz.pdf",
     imagePath: masterThesis,
     imageAlt: "Master Thesis Image",
-    heading: "Master Thesis",
-    description: "On the Turán-Kubilius-Inequality in Number Theory"
+    time: "September 2020",
+    description: "My master thesis on the Turán-Kubilius-Inequality"
 }, {
     hasSubPage: true,
     link: "/ramen-god",
     imagePath: ramenGod,
     imageAlt: "Ramen God Image",
-    heading: "Ramen God",
+    time: "January 2020",
     description: "An Illustration I did for a very great soup"
 }, {
     hasSubPage: false,
     link: "./pdf/bachelor_thesis_schmitz.pdf",
     imagePath: bachelorThesis,
     imageAlt: "Bachelor Thesis Image",
-    heading: "Bachelor Thesis",
-    description: "On point processes, mainly the Poisson kind."
+    time: "August 2018",
+    description: "My bachelor thesis on point processes"
 }, {
     hasSubPage: false,
     link: "./pdf/schick_8_schmitz.pdf",
     imagePath: zuckerWatte,
     imageAlt: "Zuckerwatte Comic",
-    heading: "Zuckerwatte",
+    time: "July 2015",
     description: "A Comic I drew for SCHICK Magazine #8"
 }
 ];

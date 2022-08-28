@@ -1,7 +1,6 @@
 @import "Global.scss";
 
-$item-height: 520px;
-$item-banner-height: 350px;
+$item-height: 400px;
 $arrow-height: 80px;
 
 .arrow {
@@ -31,6 +30,9 @@ $arrow-height: 80px;
   .project-item-link {
     width: 100%;
     overflow-x: hidden;
+    img {
+      transition: all .5s ease;
+    }
   }
   
   .project-item-image {
@@ -43,22 +45,25 @@ $arrow-height: 80px;
   }
   
   .project-text {
-    height: 100%;
-    width: 100%;
-    padding: 10px 20px;
-
-    .project-item-heading {
-      padding: 5px 0;
-      text-align: left;
-      font-weight: bold;
-      font-size: 2rem;
-      color: $dark;
-    }
+    position: absolute;
+    bottom: 20px;
+    right: -10px;
+    max-width: 320px;
+    font-weight: 400;
+    background-color: $dark;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 20px 50%);
+    padding: 20px 30px 20px 40px;
 
     .project-item-description {
-      font-size: 1.2rem;
+      color: white;
+      font-size: 1.1rem;
       text-align: left;
-      color: $dark;
+    }
+
+    .project-time {
+      color: $red;
+      font-size: 1rem;
+      text-align: right;
     }
   }
 }
@@ -90,26 +95,8 @@ $arrow-height: 80px;
   background-color: $dark;
 }
 
-.project-item-link::before {
-  z-index: 2;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 3rem;
-  font-weight: 700;
-  content: '>> To the Project';
-  color: $beige;
-  background-color: $dark;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100px;
-  opacity: 0;
-  transition: .5s ease;
-}
-
-.project-item-link:hover::before {
-  opacity: 1;
+.project-item-link:hover {
+  img {
+    transform: scale(1.1);
+  }
 }
