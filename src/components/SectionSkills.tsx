@@ -15,7 +15,7 @@ export class SectionWorkExperience extends React.Component<{}, { activeItem: Ski
     })
 
     setActiveItem = (item: SkillItemType) => {
-        if (item != this.state.activeItem) {
+        if (item !== this.state.activeItem) {
             this.setState({fadingOut: true});
             setTimeout(() => {
                 this.setState({activeItem: item, fadingOut: false});
