@@ -2,96 +2,27 @@ import React from "react";
 import {Skill} from "./Skill";
 import "./css/SectionSkill.css"
 
-class Skills extends React.Component<{ items: ({ description?: string; title: string })[] }> {
+type SkillItemType = {
+    description?: string, title: string
+}
 
-    items = this.props.items;
-    skillItems = this.items.map((item, index) => {
-        return <Skill item={item} index={index} key={index}/>
+export class SectionWorkExperience extends React.Component<{}, { activeItem: SkillItemType, fadingOut: boolean }> {
+
+    state = {activeItem: {title: "", description: ""}, fadingOut: false};
+
+    skillItems = SkillItems.map((item, index) => {
+        return <Skill item={item} index={index} key={index} onSkillClickBind={() => this.setActiveItem(item)}/>
     })
 
-    render() {
-        return <div className="skills">
-            {this.skillItems}
-        </div>
-    }
-}
+    setActiveItem = (item: SkillItemType) => {
+        if (item != this.state.activeItem) {
+            this.setState({fadingOut: true});
+            setTimeout(() => {
+                this.setState({activeItem: item, fadingOut: false});
+            }, 200);
+        }
+    };
 
-export class SectionSkills extends React.Component<{ heading: string, headingClass: string, items: ({ description?: string; title: string })[] }> {
-    render() {
-        return <div className="container-box justify-top-container skill-container">
-            <div className="section-sub-heading skills-sub-heading">
-                <div className={this.props.headingClass}>{this.props.heading}</div>
-            </div>
-            <Skills items={this.props.items}/>
-        </div>;
-    }
-}
-
-
-const languageSkillItems = [
-    {
-        title: "Java",
-        description: "is my main language at work",
-    },
-    {
-        title: "Typescript",
-        description: "id my main language for private web projects",
-    },
-    {
-        title: "Javascript",
-        description: "sometimes used directly for sketches",
-    },
-    {
-        title: "HTML"
-    },
-    {
-        title: "CSS",
-        description: "I mainly use SCSS",
-    },
-    {
-        title: "Python"
-    },
-    {
-        title: "R"
-    }
-]
-
-const toolSkillItems = [
-    {
-        title: "Swing",
-        description: "was used for building GUIs at my old job"
-    },
-    {
-        title: "Lucene",
-        description: "used to enhance searching speed intensively compared with database search"
-    },
-    {
-        title: "Hibernate"
-    },
-    {
-        title: "Spring"
-    },
-    {
-        title: "Jenkins"
-    },
-    {
-        title: "React"
-    },
-    {
-        title: "Git"
-    },
-    {
-        title: "Github"
-    },
-    {
-        title: "PIXI.js"
-    },
-    {
-        title: "Godot"
-    }
-]
-
-export class SectionWorkExperience extends React.Component {
     render() {
         return <div className="section red yellow-font">
             <div className="sub-section">
@@ -101,10 +32,45 @@ export class SectionWorkExperience extends React.Component {
                     </div>
                 </div>
             </div>
-            <div className="sub-section">
-                <SectionSkills heading="Languages" headingClass="language-text" items={languageSkillItems}/>
-                <SectionSkills heading="Tools & Frameworks" headingClass="tool-text" items={toolSkillItems}/>
+            <div className="sub-section skills">
+                <SectionSkills items={this.skillItems}/>
+                <div
+                    className={"skill-description" + (this.state.fadingOut ? " fadingOut" : "")}>{this.state.activeItem.description}</div>
             </div>
         </div>
     }
 }
+
+export class SectionSkills extends React.Component<{items: any[] }> {
+    render() {
+        return <div className="container-box justify-top-container skill-container">
+            <div className="section-sub-heading skills-sub-heading">
+                <div className="skills-subheading">Languages, Tools and Frameworks</div>
+            </div>
+            <div className="skills">
+                {this.props.items}
+            </div>
+        </div>;
+    }
+}
+
+const SkillItems: SkillItemType[] = [
+    {title: "Java", description: "is my main language at work",},
+    {title: "Typescript", description: "id my main language for private web projects",},
+    {title: "Javascript", description: "sometimes used directly for sketches",},
+    {title: "HTML"},
+    {title: "CSS", description: "I mainly use SCSS",},
+    {title: "Python"},
+    {title: "R"},
+    {title: "Swing", description: "was used for building GUIs at my old job"},
+    {title: "Lucene", description: "used to enhance searching speed intensively compared with database search"},
+    {title: "Hibernate"},
+    {title: "Spring"},
+    {title: "Jenkins"},
+    {title: "React"},
+    {title: "Git"},
+    {title: "Github"},
+    {title: "PIXI.js"},
+    {title: "Godot"}
+]
+

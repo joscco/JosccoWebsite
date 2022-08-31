@@ -18,3 +18,23 @@
   border-width: 5px;
   border-color: $dark;
 }
+
+.skills-subheading {
+  color: $red;
+  padding: 10px 20px;
+  background-color: $beige;
+  border-radius: 20px;
+}
+
+.skill-description {
+  text-align: center;
+  font-size: 1.3em;
+  color: $beige;
+  transition: all 0.3s ease-in-out;
+  height: 30px;
+  opacity: 1;
+}
+
+.fadingOut {
+  opacity: 0;
+}

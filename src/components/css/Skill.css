@@ -31,7 +31,7 @@
 }
 
 .skill-item.clickable-skill:hover {
-  color: #f1f4d8;
+  color: #ffcd8d;
   background-color: #00313c;
   cursor: pointer;
 }
@@ -46,7 +46,7 @@
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
-  background-color: #f1f4d8;
+  background-color: #ffcd8d;
   color: #00313c;
   border-radius: 10px;
   transition: all 0.5s ease-out;
@@ -71,10 +71,6 @@
 
 .tool-text {
   display: inline;
-}
-
-.expanded {
-  max-height: 300px;
 }
 
 @media all and (max-width: 1024px) {
