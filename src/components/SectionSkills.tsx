@@ -28,14 +28,19 @@ export class SectionWorkExperience extends React.Component<{}, { activeItem: Ski
             <div className="sub-section">
                 <div className="container-box">
                     <div className="section-heading skill-heading">
-                        Work Experience
+                        Tools & Co.
                     </div>
                 </div>
             </div>
+
             <div className="sub-section skills">
                 <SectionSkills items={this.skillItems}/>
-                <div
-                    className={"skill-description" + (this.state.fadingOut ? " fadingOut" : "")}>{this.state.activeItem.description}</div>
+            </div>
+            
+            <div className="container-box">
+                <div className={"section-heading skill-description" + (this.state.fadingOut ? " fadingOut" : "")}>
+                    {this.state.activeItem.description}
+                </div>
             </div>
         </div>
     }
@@ -44,9 +49,6 @@ export class SectionWorkExperience extends React.Component<{}, { activeItem: Ski
 export class SectionSkills extends React.Component<{items: any[] }> {
     render() {
         return <div className="container-box justify-top-container skill-container">
-            <div className="section-sub-heading skills-sub-heading">
-                <div className="skills-subheading">Languages, Tools and Frameworks</div>
-            </div>
             <div className="skills">
                 {this.props.items}
             </div>
@@ -55,15 +57,15 @@ export class SectionSkills extends React.Component<{items: any[] }> {
 }
 
 const SkillItems: SkillItemType[] = [
-    {title: "Java", description: "is my main language at work",},
-    {title: "Typescript", description: "id my main language for private web projects",},
-    {title: "Javascript", description: "sometimes used directly for sketches",},
-    {title: "HTML"},
-    {title: "CSS", description: "I mainly use SCSS",},
-    {title: "Python"},
-    {title: "R"},
-    {title: "Swing", description: "was used for building GUIs at my old job"},
-    {title: "Lucene", description: "used to enhance searching speed intensively compared with database search"},
+    {title: "Java", description: "My main language for backend work.",},
+    {title: "Typescript", description: "My main language for private web projects and frontend at work.",},
+    {title: "Javascript", description: "Sometimes used directly for sketches.",},
+    {title: "HTML", description: "Framework for all, not much to say about that."},
+    {title: "CSS", description: "I mainly use SCSS.",},
+    {title: "Python", description: "Mainly used python for maths projects and Godot."},
+    {title: "R", description: "Did a lot of statistics computation in university with R."},
+    {title: "Swing", description: "Swing was used for building GUIs at my old job."},
+    {title: "Lucene", description: "Used to enhance searching speed intensively compared to normal database search."},
     {title: "Hibernate"},
     {title: "Spring"},
     {title: "Jenkins"},
@@ -71,6 +73,6 @@ const SkillItems: SkillItemType[] = [
     {title: "Git"},
     {title: "Github"},
     {title: "PIXI.js"},
-    {title: "Godot"}
+    {title: "Godot", description: "My favourite Game Engine."}
 ]
 

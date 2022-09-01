@@ -1,6 +1,8 @@
 @import "Global";
 
 .skills {
+  border-radius: 10px;
+  padding: 10px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -10,28 +12,22 @@
 }
 
 .skill-container {
-  padding: 20px;
+  padding: 20px 0;
 }
 
 .skill-heading {
   border-style: dashed;
   border-width: 5px;
-  border-color: $dark;
-}
-
-.skills-subheading {
-  color: $red;
-  padding: 10px 20px;
-  background-color: $beige;
-  border-radius: 20px;
+  border-color: $yellow;
+  color: $dark;
 }
 
 .skill-description {
-  text-align: center;
   font-size: 1.3em;
-  color: $beige;
+  color: $yellow;
+  align-self: center;
   transition: all 0.3s ease-in-out;
-  height: 30px;
+  height: 80px;
   opacity: 1;
 }
 

@@ -31,6 +31,8 @@
 }
 
 .skills {
+  border-radius: 10px;
+  padding: 10px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -40,28 +42,22 @@
 }
 
 .skill-container {
-  padding: 20px;
+  padding: 20px 0;
 }
 
 .skill-heading {
   border-style: dashed;
   border-width: 5px;
-  border-color: #00313c;
-}
-
-.skills-subheading {
-  color: #ff6572;
-  padding: 10px 20px;
-  background-color: #f1f4d8;
-  border-radius: 20px;
+  border-color: #ffcd8d;
+  color: #00313c;
 }
 
 .skill-description {
-  text-align: center;
   font-size: 1.3em;
-  color: #f1f4d8;
+  color: #ffcd8d;
+  align-self: center;
   transition: all 0.3s ease-in-out;
-  height: 30px;
+  height: 80px;
   opacity: 1;
 }
 

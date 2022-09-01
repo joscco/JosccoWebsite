@@ -1,8 +1,8 @@
 @import "Global";
 
 .skill-item.clickable-skill:hover {
-  color: $yellow;
-  background-color: $dark;
+  color: $dark;
+  background-color: $beige;
   cursor: pointer;
 }
 
@@ -16,8 +16,8 @@
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
-  background-color: $yellow;
-  color: $dark;
+  background-color: $dark;
+  color: $beige;
   border-radius: 10px;
   transition: all 0.5s ease-out;
   overflow: hidden;
