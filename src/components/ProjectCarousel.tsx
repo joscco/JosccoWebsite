@@ -1,5 +1,6 @@
 import React from "react";
 import "./css/ProjectCarousel.css"
+import adventsKalender2022 from "../images/ProjectSection/ProjectTeasers/adventskalender2022.png"
 import dicity from "../images/ProjectSection/ProjectTeasers/dicity.png"
 import ludumDare50 from "../images/ProjectSection/ProjectTeasers/ludumDare2022.png"
 import adventsKalender2021 from "../images/ProjectSection/ProjectTeasers/adventsKalender2021.png"
@@ -12,18 +13,13 @@ import masterThesis from "../images/ProjectSection/ProjectTeasers/masterThesis.p
 import bachelorThesis from "../images/ProjectSection/ProjectTeasers/bachelorThesis.png";
 import zuckerWatte from "../images/ProjectSection/ProjectTeasers/schick2015.png";
 import schick2022 from "../images/ProjectSection/ProjectTeasers/schick2022.png";
-import {Link} from "react-router-dom";
 
 export class ProjectCarousel extends React.Component {
     projectCarousel = React.createRef() as React.MutableRefObject<HTMLInputElement>;
 
     createItem(item: ProjectItemType, index: number) {
 
-        let itemLink = item.hasSubPage
-            ? <Link to={item.link} className="project-item-link">
-                <img src={item.imagePath} className="project-item-image" alt={item.imageAlt}/>
-            </Link>
-            : <a href={item.link} className="project-item-link">
+        let itemLink = <a href={item.link} className="project-item-link">
                 <img src={item.imagePath} className="project-item-image" alt={item.imageAlt}/>
             </a>;
 
@@ -79,6 +75,13 @@ type ProjectItemType = {
 
 const PROJECTS: ProjectItemType[] = [{
     hasSubPage: false,
+    link: "https://joscco.itch.io/bernds-biscuits",
+    imagePath: adventsKalender2022,
+    imageAlt: "Bernd's Biscuits",
+    time: "November 2022",
+    description: "A Christmas Bakery Puzzle Game"
+}, {
+    hasSubPage: false,
     link: "./pdf/schick_15_schmitz.pdf",
     imagePath: schick2022,
     imageAlt: "Schick 2022 Preview",
@@ -127,8 +130,8 @@ const PROJECTS: ProjectItemType[] = [{
     time: "September 2020",
     description: "My master thesis on the Turán-Kubilius-Inequality"
 }, {
-    hasSubPage: true,
-    link: "/ramen-god",
+    hasSubPage: false,
+    link: "./images/finalImage.png",
     imagePath: ramenGod,
     imageAlt: "Ramen God Image",
     time: "January 2020",
