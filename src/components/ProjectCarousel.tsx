@@ -1,18 +1,19 @@
 import React from "react";
 import "./css/ProjectCarousel.css"
-import adventsKalender2022 from "../images/ProjectSection/ProjectTeasers/adventskalender2022.png"
-import dicity from "../images/ProjectSection/ProjectTeasers/dicity.png"
-import ludumDare50 from "../images/ProjectSection/ProjectTeasers/ludumDare2022.png"
 import adventsKalender2021 from "../images/ProjectSection/ProjectTeasers/adventsKalender2021.png"
+import adventsKalender2022 from "../images/ProjectSection/ProjectTeasers/adventskalender2022.png"
 import arrowLeft from "../images/ProjectSection/arrow_left.png"
 import arrowRight from "../images/ProjectSection/arrow_right.png"
-import wildNight from "../images/ProjectSection/ProjectTeasers/schick2021.png";
-import jamesBot from "../images/ProjectSection/ProjectTeasers/jamesBot.png";
-import ramenGod from "../images/ProjectSection/ProjectTeasers/ramengod.png";
-import masterThesis from "../images/ProjectSection/ProjectTeasers/masterThesis.png";
 import bachelorThesis from "../images/ProjectSection/ProjectTeasers/bachelorThesis.png";
-import zuckerWatte from "../images/ProjectSection/ProjectTeasers/schick2015.png";
+import dicity from "../images/ProjectSection/ProjectTeasers/dicity.png"
+import hedgeHurl2022 from "../images/ProjectSection/ProjectTeasers/hedgeHurl.png"
+import jamesBot from "../images/ProjectSection/ProjectTeasers/jamesBot.png";
+import ludumDare50 from "../images/ProjectSection/ProjectTeasers/ludumDare2022.png"
+import masterThesis from "../images/ProjectSection/ProjectTeasers/masterThesis.png";
+import ramenGod from "../images/ProjectSection/ProjectTeasers/ramengod.png";
 import schick2022 from "../images/ProjectSection/ProjectTeasers/schick2022.png";
+import wildNight from "../images/ProjectSection/ProjectTeasers/schick2021.png";
+import zuckerWatte from "../images/ProjectSection/ProjectTeasers/schick2015.png";
 
 export class ProjectCarousel extends React.Component {
     projectCarousel = React.createRef() as React.MutableRefObject<HTMLInputElement>;
@@ -74,6 +75,13 @@ type ProjectItemType = {
 }
 
 const PROJECTS: ProjectItemType[] = [{
+    hasSubPage: false,
+    link: "https://joscco.itch.io/hedge-hurl",
+    imagePath: hedgeHurl2022,
+    imageAlt: "Hedge Hurl",
+    time: "December 2022",
+    description: "A billiard-like Game for the Secret Santa Jam"
+}, {
     hasSubPage: false,
     link: "https://joscco.itch.io/bernds-biscuits",
     imagePath: adventsKalender2022,
