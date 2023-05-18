@@ -14,6 +14,7 @@ import ramenGod from "../images/ProjectSection/ProjectTeasers/ramengod.png";
 import schick2022 from "../images/ProjectSection/ProjectTeasers/schick2022.png";
 import wildNight from "../images/ProjectSection/ProjectTeasers/schick2021.png";
 import zuckerWatte from "../images/ProjectSection/ProjectTeasers/schick2015.png";
+import ludumDare53 from "../images/ProjectSection/ProjectTeasers/ludumDare2023.png";
 
 export class ProjectCarousel extends React.Component {
     projectCarousel = React.createRef() as React.MutableRefObject<HTMLInputElement>;
@@ -75,6 +76,13 @@ type ProjectItemType = {
 }
 
 const PROJECTS: ProjectItemType[] = [{
+    hasSubPage: false,
+    link: "https://joscco.itch.io/heart-warming-deliveries",
+    imagePath: ludumDare53,
+    imageAlt: "Heart-Warming Deliveries",
+    time: "April/May 2023",
+    description: "Puzzle Game Entry for the Ludum Dare 53 Game Jam"
+}, {
     hasSubPage: false,
     link: "https://joscco.itch.io/hedge-hurl",
     imagePath: hedgeHurl2022,
