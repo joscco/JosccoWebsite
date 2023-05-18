@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.a974c90e.css",
-    "main.js": "/static/js/main.64de8ddd.js",
+    "main.js": "/static/js/main.7f0c8c4c.js",
     "static/js/496.9741b71e.chunk.js": "/static/js/496.9741b71e.chunk.js",
     "static/media/me.png": "/static/media/me.e764891506834a709b0b.png",
     "static/media/hedgeHurl.png": "/static/media/hedgeHurl.7051c0e520e6307933f6.png",
@@ -11,6 +11,7 @@
     "static/media/jamesBot.png": "/static/media/jamesBot.7431c85585af7b61eaff.png",
     "static/media/dicity.png": "/static/media/dicity.cfac3f424f95bf8c5430.png",
     "static/media/ludumDare2022.png": "/static/media/ludumDare2022.8a74c2555d765521f5c5.png",
+    "static/media/ludumDare2023.png": "/static/media/ludumDare2023.3978918d1b19d0f147ec.png",
     "static/media/schick2015.png": "/static/media/schick2015.be0c6d9c97b75b0bb2cf.png",
     "static/media/schick2022.png": "/static/media/schick2022.c4e914ef6b9e16977bb4.png",
     "static/media/adventskalender2022.png": "/static/media/adventskalender2022.48fb82ceb207ada7f9ac.png",
@@ -22,11 +23,11 @@
     "static/media/logo.svg": "/static/media/logo.647b1686be6f70701bcc25910db52852.svg",
     "index.html": "/index.html",
     "main.a974c90e.css.map": "/static/css/main.a974c90e.css.map",
-    "main.64de8ddd.js.map": "/static/js/main.64de8ddd.js.map",
+    "main.7f0c8c4c.js.map": "/static/js/main.7f0c8c4c.js.map",
     "496.9741b71e.chunk.js.map": "/static/js/496.9741b71e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a974c90e.css",
-    "static/js/main.64de8ddd.js"
+    "static/js/main.7f0c8c4c.js"
   ]
 }
