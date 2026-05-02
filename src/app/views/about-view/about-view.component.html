@@ -68,7 +68,7 @@
         @if (hoveredTooltip) {
           <div
             [id]="'tooltip-box'"
-            class="absolute pointer-events-none -translate-x-1/2 z-50 px-3 py-1 text-sm rounded-lg text-white bg-black shadow"
+            class="absolute pointer-events-none z-50 px-3 py-1 text-sm rounded-lg text-white bg-black shadow"
             [style.left.px]="getScreenX(hoveredTooltip.x)"
             [style.top.px]="hoveredTooltip.y"
           >

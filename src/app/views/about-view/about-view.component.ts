@@ -57,7 +57,8 @@ export class AboutViewComponent implements OnInit, AfterViewInit {
 
   private resizeObserver?: ResizeObserver;
 
-  constructor(private cdr: ChangeDetectorRef) {}
+  constructor(private cdr: ChangeDetectorRef) {
+  }
 
   ngOnInit() {
     this.isTouchUser = 'ontouchstart' in window;
@@ -145,14 +146,16 @@ export class AboutViewComponent implements OnInit, AfterViewInit {
     const nextState = ((item.currentStateIndex ?? 0) + 1) % item.states.length;
     // Use currentTarget (the <svg>) – event.target might be the inner <use> element
     const el = event.currentTarget as HTMLElement;
-    gsap.fromTo(el, { scale: 1 }, {
+    gsap.fromTo(el, {scale: 1}, {
       scale: 0.85, duration: 0.1, ease: 'power2.out',
       transformBox: 'fill-box', transformOrigin: '50% 50%',
       onComplete: () => {
         item.currentStateIndex = nextState;
         this.showTooltip(item); // refresh tooltip text for new state
-        gsap.to(el, { scale: 1, duration: 0.1, ease: 'power2.out',
-          transformBox: 'fill-box', transformOrigin: '50% 50%' });
+        gsap.to(el, {
+          scale: 1, duration: 0.1, ease: 'power2.out',
+          transformBox: 'fill-box', transformOrigin: '50% 50%'
+        });
       }
     });
   }
@@ -216,15 +219,27 @@ export class AboutViewComponent implements OnInit, AfterViewInit {
     // Set position & text first so the element exists in the DOM before GSAP touches it
     const x = item.x;
     const y = item.y - this.getTooltipOffset(item);
+    const alreadyVisible = this.hoveredTooltip != null;
     this.hoveredTooltip = {id: item.id, x, y, text: tooltipText};
     this.cdr.detectChanges();
 
     const el = document.getElementById('tooltip-box');
     if (el) {
-      this.tooltipTween = gsap.fromTo(el,
-        {opacity: 0, scale: 0.9, transformOrigin: '50% 100%'},
-        {opacity: 1, scale: 1, duration: 0.25, ease: 'power2.out', transformOrigin: '50% 100%'}
-      );
+      if (alreadyVisible) {
+        // Tooltip already visible (state cycling via click): keep it visible and do a
+        // subtle scale-pop from center so the top edge never shifts visually.
+        // xPercent: -50 is always passed explicitly so GSAP fully owns the x-centering
+        // and never loses it when switching transformOrigin between animations.
+        this.tooltipTween = gsap.fromTo(el,
+          {scale: 0.9, xPercent: -50, transformOrigin: '50% 50%'},
+          {scale: 1, xPercent: -50, duration: 0.2, ease: 'back.out(2)', transformOrigin: '50% 50%'}
+        );
+      } else {
+        this.tooltipTween = gsap.fromTo(el,
+          {opacity: 0, scale: 0.9, xPercent: -50, transformOrigin: '50% 100%'},
+          {opacity: 1, scale: 1, xPercent: -50, duration: 0.25, ease: 'power2.out', transformOrigin: '50% 100%'}
+        );
+      }
     }
   }
 
@@ -234,7 +249,7 @@ export class AboutViewComponent implements OnInit, AfterViewInit {
     if (el) {
       // Animate out first, THEN remove from DOM
       this.tooltipTween = gsap.to(el, {
-        opacity: 0, scale: 0.9, duration: 0.2, ease: 'power2.in',
+        opacity: 0, scale: 0.9, xPercent: -50, duration: 0.2, ease: 'power2.in',
         transformOrigin: '50% 100%',
         onComplete: () => {
           this.hoveredTooltip = null;
@@ -260,7 +275,10 @@ export class AboutViewComponent implements OnInit, AfterViewInit {
 
   private scaleItem(el: HTMLElement) {
     this.itemTweens = this.itemTweens.filter(tween => {
-      if (tween.targets().includes(el)) { tween.kill(); return false; }
+      if (tween.targets().includes(el)) {
+        tween.kill();
+        return false;
+      }
       return true;
     });
     if (el) {
@@ -296,7 +314,7 @@ export class AboutViewComponent implements OnInit, AfterViewInit {
     this.itemTweens = [];
     this.itemRefs.forEach(item => {
       const el = item.nativeElement;
-      gsap.set(el, { rotation: 0, transformBox: 'fill-box', transformOrigin: '50% 50%' });
+      gsap.set(el, {rotation: 0, transformBox: 'fill-box', transformOrigin: '50% 50%'});
     });
   }
 
