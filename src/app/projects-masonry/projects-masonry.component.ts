@@ -9,27 +9,21 @@ import {
   HostListener,
   inject
 } from '@angular/core';
-import {AsyncPipe, NgClass, NgFor, NgIf, NgStyle} from '@angular/common';
+import {AsyncPipe, NgClass, NgStyle} from '@angular/common';
 import {ReplaySubject} from 'rxjs';
-import {resizeImage} from '../app.animations';
 import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-projects-masonry',
   imports: [
-    NgFor,
     AsyncPipe,
     NgStyle,
-    NgClass,
-    NgIf
+    NgClass
   ],
   templateUrl: './projects-masonry.component.html',
   host: {
     class: 'w-full'
-  },
-  animations: [
-    resizeImage
-  ]
+  }
 })
 export class ProjectsMasonryComponent implements AfterViewInit, OnInit, OnDestroy {
 
@@ -47,9 +41,9 @@ export class ProjectsMasonryComponent implements AfterViewInit, OnInit, OnDestro
 
   columnGap = 16;
   height = 0;
-  resizeState = 'hidden';
   clickedItem?: string;
   hoveredItem?: string;
+  loadedImages = new Set<string>();
 
   @ViewChild('resizeContainer', {static: false}) masonryContainer!: ElementRef;
 
@@ -58,19 +52,14 @@ export class ProjectsMasonryComponent implements AfterViewInit, OnInit, OnDestro
     y: number,
     left: number,
     width: number,
+    aspectRatio: string,
     title?: string,
     link?: string,
     subtitle?: string
   }[]> = new ReplaySubject(0);
   private resizeObserver?: ResizeObserver;
 
-  ngOnInit() {
-    setTimeout(() => {
-      if (this.resizeState === 'hidden') {
-        this.resizeState = 'shown';
-      }
-    }, 50);
-  }
+  ngOnInit() {}
 
   ngAfterViewInit() {
     this.resizeObserver = new ResizeObserver(() => this.updateColumns());
@@ -97,6 +86,7 @@ export class ProjectsMasonryComponent implements AfterViewInit, OnInit, OnDestro
           y: y,
           left: column * (columnWidth + this.columnGap),
           width: columnWidth,
+          aspectRatio: `${image.originalWidth} / ${image.originalHeight}`,
           title: image.title,
           link: image.link,
           subtitle: image.subtitle
@@ -107,12 +97,9 @@ export class ProjectsMasonryComponent implements AfterViewInit, OnInit, OnDestro
     }
   }
 
-  trackByFn(index: number, item: any) {
-    return item.img; // or any unique identifier
-  }
 
-  getResizeState() {
-    return this.resizeState;
+  onImageLoad(src: string) {
+    this.loadedImages = new Set([...this.loadedImages, src]);
   }
 
   onImageClick(item: any) {

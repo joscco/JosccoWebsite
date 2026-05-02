@@ -26,41 +26,58 @@
           #desk
         >
           <!-- Desk Image -->
-          <img src="svg/about/divider.svg"
+          <svg viewBox="0 0 595.28 41.67"
                class="absolute left-1/2 -translate-x-1/2 min-w-[850px] pointer-events-none"
-               alt="divider">
+               aria-hidden="true">
+            <use href="#about-divider"/>
+          </svg>
           <!-- Buttons -->
-          <div *ngIf="!isTouchUser && !isCompact" class="absolute right-28 bottom-[200px] flex flex-col w-16 gap-2 z-50 text-sm">
-              <img (mouseenter)="onEditOver($event.target)" (mouseleave)="onEditOut($event.target)" (click)="toggleEditMode($event.target)" [src]="isEditMode ? 'svg/about/lock.svg' : 'svg/about/move.svg'"
-                   class="inline-block w-16 h-16"
-                   alt="Edit Icon" #editButton>
-          </div>
+          @if (!isTouchUser && !isCompact) {
+            <div class="absolute right-28 bottom-[200px] flex flex-col w-16 gap-2 z-50 text-sm">
+                <svg (mouseenter)="onEditOver($event.target)" (mouseleave)="onEditOut($event.target)" (click)="toggleEditMode($event.target)"
+                     [attr.viewBox]="isEditMode ? '0 0 100 100' : '0 0 100 100'"
+                     class="inline-block w-16 h-16 cursor-pointer"
+                     #editButton>
+                  <use [attr.href]="isEditMode ? '#about-lock' : '#about-move'"/>
+                </svg>
+            </div>
+          }
 
-          @for (item of items; track item.id; let i = $index) {
-            <img #item
-                 [src]="getImageSrc(item)"
+          @for (item of items; track item.id) {
+            <!-- Wrapper-div übernimmt Positionierung + CSS-translateX(-50%).
+                 Das innere SVG bekommt ausschließlich GSAP-Transforms → kein Konflikt. -->
+            <div class="absolute z-10"
                  [style.left.px]="getScreenX(item.x!)"
                  [style.top.px]="item.y"
-                 class="absolute z-10 cursor-pointer select-none -translate-x-1/2"
-                 (pointerdown)="onPointerDown($event, item.id)"
-                 (mouseenter)="focus(item, $event)"
-                 (mouseleave)="unfocus()"
-                 (click)="cycleState($event, item)"
-            />
+                 style="transform: translateX(-50%)">
+              <svg #item
+                   [attr.viewBox]="getSvgViewBox(item)"
+                   [attr.width]="getSvgWidth(item)"
+                   [attr.height]="getSvgHeight(item)"
+                   class="cursor-pointer select-none overflow-visible block"
+                   (pointerdown)="onPointerDown($event, item.id)"
+                   (mouseenter)="focus(item, $event)"
+                   (mouseleave)="unfocus()"
+                   (click)="cycleState($event, item)"
+              >
+                <use [attr.href]="getSymbolRef(item)"/>
+              </svg>
+            </div>
           }
         </div>
-        <div
-          *ngIf="hoveredTooltip"
-          [id]="'tooltip-box'"
-          class="absolute pointer-events-none -translate-x-1/2 z-50 px-3 py-1 text-sm rounded-lg text-white bg-black shadow"
-          [style.left.px]="getScreenX(hoveredTooltip.x)"
-          [style.top.px]="hoveredTooltip.y"
-        >
-          {{ hoveredTooltip.text }}
-          <svg class="absolute left-1/2 -translate-x-1/2 -bottom-2" width="20" height="10" viewBox="0 0 20 10">
-            <polygon points="0,0 10,10 20,0" fill="black"/>
-          </svg>
-        </div>
+        @if (hoveredTooltip) {
+          <div
+            [id]="'tooltip-box'"
+            class="absolute pointer-events-none -translate-x-1/2 z-50 px-3 py-1 text-sm rounded-lg text-white bg-black shadow"
+            [style.left.px]="getScreenX(hoveredTooltip.x)"
+            [style.top.px]="hoveredTooltip.y"
+          >
+            {{ hoveredTooltip.text }}
+            <svg class="absolute left-1/2 -translate-x-1/2 -bottom-2" width="20" height="10" viewBox="0 0 20 10">
+              <polygon points="0,0 10,10 20,0" fill="black"/>
+            </svg>
+          </div>
+        }
       </div>
     </div>
   </div>

@@ -9,9 +9,9 @@ import {
   ViewChild,
   ViewChildren
 } from '@angular/core';
-import {NgIf} from '@angular/common';
 import gsap from 'gsap';
 import {AboutItems} from './about-items';
+import {SVG_SPRITE_META} from '../../svg-sprite-meta';
 
 export interface DeskItem {
   id: string;
@@ -28,7 +28,7 @@ export interface DeskItem {
 @Component({
   selector: 'app-about-view',
   templateUrl: './about-view.component.html',
-  imports: [NgIf]
+  imports: []
 })
 export class AboutViewComponent implements OnInit, AfterViewInit {
   @HostBinding('class') class = 'h-full flex flex-col';
@@ -69,6 +69,19 @@ export class AboutViewComponent implements OnInit, AfterViewInit {
     this.resizeTableAndRepositionItems();
     window.addEventListener('resize', () => this.resizeListener);
     this.cdr.detectChanges();
+
+    // Initialize GSAP transforms (centering + transform-origin) for all items.
+    // Must run after initial render and after each compact/non-compact switch.
+    const initItems = () => {
+      this.itemRefs.forEach(ref => {
+        gsap.set(ref.nativeElement, {
+          transformBox: 'fill-box',
+          transformOrigin: '50% 50%',
+        });
+      });
+    };
+    initItems();
+    this.itemRefs.changes.subscribe(initItems);
   }
 
   ngOnDestroy() {
@@ -130,12 +143,16 @@ export class AboutViewComponent implements OnInit, AfterViewInit {
   cycleState(event: MouseEvent, item: DeskItem) {
     if (this.isEditMode || !item.states) return;
     const nextState = ((item.currentStateIndex ?? 0) + 1) % item.states.length;
-    const el = event.target as HTMLElement;
+    // Use currentTarget (the <svg>) – event.target might be the inner <use> element
+    const el = event.currentTarget as HTMLElement;
     gsap.fromTo(el, { scale: 1 }, {
-      scale: 0.85, duration: 0.1, ease: 'power2.out', onComplete: () => {
+      scale: 0.85, duration: 0.1, ease: 'power2.out',
+      transformBox: 'fill-box', transformOrigin: '50% 50%',
+      onComplete: () => {
         item.currentStateIndex = nextState;
-        this.focus(item, event);
-        gsap.to(el, { scale: 1, duration: 0.1, ease: 'power2.out' });
+        this.showTooltip(item); // refresh tooltip text for new state
+        gsap.to(el, { scale: 1, duration: 0.1, ease: 'power2.out',
+          transformBox: 'fill-box', transformOrigin: '50% 50%' });
       }
     });
   }
@@ -145,12 +162,37 @@ export class AboutViewComponent implements OnInit, AfterViewInit {
     return `svg/about/${state}.svg`;
   }
 
+  /** Returns the sprite symbol id for the current state of an item, e.g. "#about-dino" */
+  getSymbolRef(item: DeskItem): string {
+    const state = item.states?.[item.currentStateIndex!];
+    return `#about-${state}`;
+  }
+
+  /** Returns the SVG viewBox for the current state of an item from the sprite metadata */
+  getSvgViewBox(item: DeskItem): string {
+    const state = item.states?.[item.currentStateIndex!];
+    return SVG_SPRITE_META[`about-${state}`]?.viewBox ?? '0 0 100 100';
+  }
+
+  /** Returns the original SVG width attribute (in mm) for the current item state */
+  getSvgWidth(item: DeskItem): string | null {
+    const state = item.states?.[item.currentStateIndex!];
+    return SVG_SPRITE_META[`about-${state}`]?.width ?? null;
+  }
+
+  /** Returns the original SVG height attribute (in mm) for the current item state */
+  getSvgHeight(item: DeskItem): string | null {
+    const state = item.states?.[item.currentStateIndex!];
+    return SVG_SPRITE_META[`about-${state}`]?.height ?? null;
+  }
+
   focus(item: DeskItem, event: MouseEvent) {
     if (this.isTouchUser) return;
     if (this.isEditMode) return;
     this.showTooltip(item);
     this.rescaleItems();
-    this.scaleItem(event);
+    // Use currentTarget (the <svg>) – event.target may be the inner <use>
+    this.scaleItem(event.currentTarget as HTMLElement);
   }
 
   unfocus() {
@@ -168,40 +210,40 @@ export class AboutViewComponent implements OnInit, AfterViewInit {
   showTooltip(item: DeskItem) {
     const tooltipText = this.getTooltip(item);
     if (!tooltipText) return;
-    const el = document.getElementById('tooltip-box');
+
     this.tooltipTween?.kill();
-    this.tooltipTween = gsap.to(el, {
-      opacity: 0,
-      scale: 0.9,
-      duration: 0.1,
-      ease: 'power2.out',
-      onComplete: () => {
-        const x = item.x
-        const y = item.y - this.getTooltipOffset(item);
-        this.hoveredTooltip = {id: item.id, x, y, text: tooltipText};
-        this.cdr.detectChanges();
-        if (el) {
-          this.tooltipTween = gsap.fromTo(el, {opacity: 0, scale: 0.9}, {
-            opacity: 1,
-            scale: 1,
-            delay: 0.1,
-            duration: 0.25,
-            ease: 'power2.out'
-          });
-        }
-      }
-    })
+
+    // Set position & text first so the element exists in the DOM before GSAP touches it
+    const x = item.x;
+    const y = item.y - this.getTooltipOffset(item);
+    this.hoveredTooltip = {id: item.id, x, y, text: tooltipText};
+    this.cdr.detectChanges();
+
+    const el = document.getElementById('tooltip-box');
+    if (el) {
+      this.tooltipTween = gsap.fromTo(el,
+        {opacity: 0, scale: 0.9, transformOrigin: '50% 100%'},
+        {opacity: 1, scale: 1, duration: 0.25, ease: 'power2.out', transformOrigin: '50% 100%'}
+      );
+    }
   }
 
   hideTooltip() {
     const el = document.getElementById('tooltip-box');
     this.tooltipTween?.kill();
     if (el) {
+      // Animate out first, THEN remove from DOM
       this.tooltipTween = gsap.to(el, {
-        opacity: 0, scale: 0.9, duration: 0.2, ease: 'power2.in'
+        opacity: 0, scale: 0.9, duration: 0.2, ease: 'power2.in',
+        transformOrigin: '50% 100%',
+        onComplete: () => {
+          this.hoveredTooltip = null;
+          this.cdr.detectChanges();
+        }
       });
+    } else {
+      this.hoveredTooltip = null;
     }
-    this.hoveredTooltip = null;
   }
 
   private rescaleItems() {
@@ -209,25 +251,22 @@ export class AboutViewComponent implements OnInit, AfterViewInit {
     this.itemTweens = [];
     this.itemRefs.forEach(ref => {
       const el = ref.nativeElement;
-      this.itemTweens.push(gsap.to(el, {scale: 1, duration: 0.2, ease: 'power2.out'}));
+      this.itemTweens.push(gsap.to(el, {
+        scale: 1, duration: 0.2, ease: 'power2.out',
+        transformBox: 'fill-box', transformOrigin: '50% 50%',
+      }));
     });
   }
 
-  private scaleItem(event: MouseEvent) {
-    const el = event.target as HTMLElement;
-    // Kill and remove any existing tween for this item
+  private scaleItem(el: HTMLElement) {
     this.itemTweens = this.itemTweens.filter(tween => {
-      if (tween.targets().includes(el)) {
-        tween.kill();
-        return false; // Remove this tween
-      }
-      return true; // Keep other tweens
+      if (tween.targets().includes(el)) { tween.kill(); return false; }
+      return true;
     });
     if (el) {
       this.itemTweens.push(gsap.to(el, {
-        scale: 1.05,
-        duration: 0.2,
-        ease: 'power2.out'
+        scale: 1.05, duration: 0.2, ease: 'power2.out',
+        transformBox: 'fill-box', transformOrigin: '50% 50%',
       }));
     }
   }
@@ -237,7 +276,6 @@ export class AboutViewComponent implements OnInit, AfterViewInit {
   }
 
   private startWiggle() {
-    // Start a wiggle rotation animation for all items
     this.itemRefs.forEach(item => {
       const el = item.nativeElement;
       const tween = gsap.fromTo(el, {rotation: -1}, {
@@ -246,7 +284,9 @@ export class AboutViewComponent implements OnInit, AfterViewInit {
         ease: 'power1.inOut',
         repeat: -1,
         yoyo: true,
-      })
+        transformBox: 'fill-box',
+        transformOrigin: '50% 50%',
+      });
       this.itemTweens.push(tween);
     });
   }
@@ -256,7 +296,7 @@ export class AboutViewComponent implements OnInit, AfterViewInit {
     this.itemTweens = [];
     this.itemRefs.forEach(item => {
       const el = item.nativeElement;
-      gsap.set(el, {rotation: 0}); // Reset rotation
+      gsap.set(el, { rotation: 0, transformBox: 'fill-box', transformOrigin: '50% 50%' });
     });
   }
 

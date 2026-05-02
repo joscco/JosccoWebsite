@@ -1,6 +1,5 @@
-import {AfterViewInit, ChangeDetectorRef, Component, ElementRef, QueryList, ViewChildren} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, QueryList, ViewChildren} from '@angular/core';
 import {RouterLink} from '@angular/router';
-import {NgForOf} from '@angular/common';
 import {gsap} from 'gsap';
 
 interface LetterData {
@@ -13,8 +12,7 @@ interface LetterData {
 @Component({
   selector: 'app-logo',
   imports: [
-    RouterLink,
-    NgForOf
+    RouterLink
   ],
   templateUrl: './logo.component.html'
 })
