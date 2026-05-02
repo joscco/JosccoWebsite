@@ -55,7 +55,7 @@ export class AboutViewComponent implements OnInit, AfterViewInit {
   draggingId: string | null = null;
   dragOffset = {x: 0, y: 0};
 
-  private resizeListener = () => this.resizeTableAndRepositionItems();
+  private resizeObserver?: ResizeObserver;
 
   constructor(private cdr: ChangeDetectorRef) {}
 
@@ -67,11 +67,11 @@ export class AboutViewComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     this.resizeTableAndRepositionItems();
-    window.addEventListener('resize', () => this.resizeListener);
     this.cdr.detectChanges();
 
-    // Initialize GSAP transforms (centering + transform-origin) for all items.
-    // Must run after initial render and after each compact/non-compact switch.
+    this.resizeObserver = new ResizeObserver(() => this.resizeTableAndRepositionItems());
+    this.resizeObserver.observe(this.deskWrapper.nativeElement);
+
     const initItems = () => {
       this.itemRefs.forEach(ref => {
         gsap.set(ref.nativeElement, {
@@ -85,7 +85,7 @@ export class AboutViewComponent implements OnInit, AfterViewInit {
   }
 
   ngOnDestroy() {
-    window.removeEventListener('resize', this.resizeListener);
+    this.resizeObserver?.disconnect();
     this.itemTweens.forEach(tween => tween.kill());
     this.tooltipTween?.kill();
     this.editButtonTween?.kill();
@@ -278,8 +278,8 @@ export class AboutViewComponent implements OnInit, AfterViewInit {
   private startWiggle() {
     this.itemRefs.forEach(item => {
       const el = item.nativeElement;
-      const tween = gsap.fromTo(el, {rotation: -1}, {
-        rotation: 1,
+      const tween = gsap.fromTo(el, {rotation: -.5}, {
+        rotation: .5,
         duration: 0.1,
         ease: 'power1.inOut',
         repeat: -1,
@@ -304,29 +304,32 @@ export class AboutViewComponent implements OnInit, AfterViewInit {
     this.editButton = target as HTMLElement;
     this.editButtonTween?.kill();
     this.editButtonTween = gsap.to(target, {
-      scale: 1.1,
-      duration: 0.2,
-      ease: 'power2.out'
+      scale: 1.1, duration: 0.2, ease: 'power2.out',
+      transformBox: 'fill-box', transformOrigin: '50% 50%',
     });
   }
 
   onEditOut(target: EventTarget | null) {
     this.editButtonTween?.kill();
     this.editButtonTween = gsap.to(target, {
-      scale: 1,
-      duration: 0.2,
-      ease: 'power2.out'
+      scale: 1, duration: 0.2, ease: 'power2.out',
+      transformBox: 'fill-box', transformOrigin: '50% 50%',
     });
   }
 
   private swapEditButton(target: HTMLElement, newMode: boolean) {
     this.editButtonTween?.kill();
-    let previousScale = gsap.getProperty(target, 'scale');
+    const previousScale = gsap.getProperty(target, 'scale');
     this.editButtonTween = gsap.to(target, {
-      scale: 0.85, duration: 0.1, ease: 'power2.out', onComplete: () => {
+      scale: 0.85, duration: 0.1, ease: 'power2.out',
+      transformBox: 'fill-box', transformOrigin: '50% 50%',
+      onComplete: () => {
         this.isEditMode = newMode;
-        this.cdr.detectChanges()
-        gsap.to(target, {scale: previousScale, duration: 0.1, ease: 'power2.out'});
+        this.cdr.detectChanges();
+        gsap.to(target, {
+          scale: previousScale, duration: 0.1, ease: 'power2.out',
+          transformBox: 'fill-box', transformOrigin: '50% 50%',
+        });
       }
     });
   }

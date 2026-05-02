@@ -1,4 +1,9 @@
-<div #resizeContainer class="relative w-full transition-all duration-300" [ngStyle]="{'height.px': height}">
+<div #resizeContainer
+     class="relative w-full"
+     [class.transition-all]="hasInitialized"
+     [class.duration-300]="hasInitialized"
+     style="opacity: 0"
+     [ngStyle]="{'height.px': height}">
   @for (item of (columns | async) ?? []; track item.img) {
     <div class="absolute transition-all duration-200"
          [ngStyle]="{'top.px': item.y, 'left.px': item.left, 'width.px': item.width }">
