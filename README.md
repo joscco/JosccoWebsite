@@ -1,1 +1,1 @@
-Deployed on: [joscco.com](https://joscco.com)
+Deployed on: [pajokram.com](https://pajokram.com)

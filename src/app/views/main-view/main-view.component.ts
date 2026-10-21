@@ -24,7 +24,7 @@ export class MainViewComponent {
       originalHeight: 800,
       title: "Granny's Gotcha",
       subtitle: "April 2025",
-      link: "https://joscco.itch.io/grannys-gotcha"
+      link: "https://pajokram.itch.io/grannys-gotcha"
     },
     {
       img: "images/projects/2023_04_heart_warming_deliveries.png",
@@ -32,7 +32,7 @@ export class MainViewComponent {
       originalHeight: 800,
       title: "Heart Warming Deliveries",
       subtitle: "April 2023",
-      link: "https://joscco.itch.io/heart-warming-deliveries"
+      link: "https://pajokram.itch.io/heart-warming-deliveries"
     },
     {
       img: "images/projects/2022_12_hedge_hurl.png",
@@ -40,7 +40,7 @@ export class MainViewComponent {
       originalHeight: 800,
       title: "Hedge Hurl",
       subtitle: "December 2022",
-      link: "https://joscco.itch.io/hedge-hurl"
+      link: "https://pajokram.itch.io/hedge-hurl"
     },
     {
       img: "images/projects/2022_11_bernds_biscuits.png",
@@ -48,7 +48,7 @@ export class MainViewComponent {
       originalHeight: 800,
       title: "Bernd's Biscuits",
       subtitle: "November 2022",
-      link: "https://joscco.itch.io/bernds-biscuits"
+      link: "https://pajokram.itch.io/bernds-biscuits"
     },
     {
       img: "images/projects/2022_08_schick.png",
@@ -64,7 +64,7 @@ export class MainViewComponent {
       originalHeight: 800,
       title: "Dicity",
       subtitle: "June 2022",
-      link: "https://joscco.itch.io/dicity"
+      link: "https://pajokram.itch.io/dicity"
     },
     {
       img: "images/projects/2022_04_dating_under_the_comet.png",
@@ -72,7 +72,7 @@ export class MainViewComponent {
       originalHeight: 800,
       title: "Dating Under the Comet",
       subtitle: "April 2022",
-      link: "https://joscco.itch.io/dating-under-the-comet"
+      link: "https://pajokram.itch.io/dating-under-the-comet"
     },
     {
       img: "images/projects/2021_11_advent_calender.png",
